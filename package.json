@@ -1,0 +1,15 @@
+{
+  "name": "url-minifier",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "postinstall": "node_modules/.bin/lerna bootstrap",
+    "preinstall": "npm run clean",
+    "clean": "find . -type d -name node_modules -exec rm -rf {} +"
+  },
+  "author": "jerome.lachaud@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "lerna": "^2.11.0"
+  }
+}
