@@ -21,4 +21,7 @@ module.exports = {
       pass: process.env.BASIC_AUTH_PASS,
     },
   },
+  alphabet: {
+    key: '123456789abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ',
+  },
 }

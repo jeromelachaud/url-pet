@@ -1,9 +1,31 @@
+const { Urls } = require('../models')
 const language = require('../languages/').urlController
 
+const { generateHash } = require('../helper/generateHash')
+const { generateUrl } = require('../helper/generateUrl')
 module.exports = {
   async create(req, res, next) {
+    const { url } = req.body
     try {
-      res.status(200).send('ok')
+      const doesUrlExist = await Urls.findOne({
+        attributes: ['url', 'hash'],
+        where: { url },
+      })
+      if (doesUrlExist) {
+        return res
+          .status(409).send({
+            error: language.urlAlreadyExists,
+            shortUrl: generateUrl(doesUrlExist.hash),
+          })
+      }
+      const newUrl = await Urls.create({
+        url,
+        hash: generateHash(),
+      })
+      res.status(201).send({
+        success: language.success,
+        shortUrl: generateUrl(newUrl.hash),
+      })
     } catch (err) {
       res.status(500).send({ error: language.genericError })
     }
