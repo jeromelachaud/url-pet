@@ -7,9 +7,9 @@
     {
       "type": "node",
       "request": "launch",
-      "envFile": "${workspaceFolder}/packages/server/.env",
+      "envFile": "${workspaceFolder}/packages/backend/.env",
       "name": "Launch NODE",
-      "program": "${workspaceFolder}/packages/server/src/app.js"
+      "program": "${workspaceFolder}/packages/backend/src/app.js"
     }
   ]
 }
