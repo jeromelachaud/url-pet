@@ -15,4 +15,10 @@ module.exports = {
       operatorsAliases: {$and: Sequelize.Op.and},
     },
   },
+  basicAuth: {
+    credentials: {
+      name: process.env.BASIC_AUTH_NAME,
+      pass: process.env.BASIC_AUTH_PASS,
+    },
+  },
 }
