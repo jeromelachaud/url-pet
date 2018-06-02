@@ -74,7 +74,13 @@ module.exports = {
 
   async list(req, res, next) {
     try {
-      res.status(200).send('ok')
+      const urls = await Urls.findAll({
+        attributes: ['url', 'hash', 'visit'],
+        order: [['visit', 'DESC']],
+      })
+      res
+        .status(200)
+        .send(urls)
     } catch (err) {
       res.status(500).send({ error: language.genericError })
     }
