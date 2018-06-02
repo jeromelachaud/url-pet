@@ -1,0 +1,152 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "url-minifier",
+    "description": "An tiny app to generate shortened URL",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "host": "localhost:8081",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/url/create": {
+      "post": {
+        "tags": [
+          "Url"
+        ],
+        "summary": "Create a shortened URL",
+        "description": "Create a new shortened URL",
+        "parameters": [
+          {
+            "name": "url",
+            "in": "body",
+            "description": "Url that we want to create a short version for",
+            "schema": {
+              "$ref": "#/definitions/Url/properties/url"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "The short url has been successfully created! 👌"
+          }
+        }
+      }
+    },
+    "/url/delete": {
+      "delete": {
+        "tags": [
+          "Url"
+        ],
+        "summary": "Delete a short URL",
+        "description": "Delete a shortened URL",
+        "parameters": [
+          {
+            "name": "hash",
+            "in": "body",
+            "description": "The hash of the short url that we want to delete",
+            "schema": {
+              "$ref": "#/definitions/Url/properties/hash"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "This short url has been successfully deleted 🤯"
+          }
+        }
+      }
+    },
+    "/url/list": {
+      "get": {
+        "tags": [
+          "Url"
+        ],
+        "summary": "List all the short URLs",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Urls"
+            }
+          }
+        }
+      }
+    },
+    "/users/login": {
+      "post": {
+        "summary": "Middleware using Base Auth",
+        "tags": [
+          "User"
+        ],
+        "security": {
+          "basicAuth": []
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Url": {
+      "required": [
+        "id",
+        "url",
+        "hash"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "uniqueItems": true
+        },
+        "url": {
+          "type": "string"
+        },
+        "hash": {
+          "type": "string",
+          "uniqueItems": true
+        },
+        "visit": {
+          "type": "integer"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "deletedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "Urls": {
+      "type": "array",
+      "$ref": "#/definitions/Url"
+    }
+  }
+}
