@@ -1,10 +1,13 @@
 // Config
 require('dotenv').config()
 const config = require('./config/config')
+const swaggerUi = require('swagger-ui-express')
+const swaggerDocument = require('./swagger.json')
 
 // Server
 const express = require('express')
 const app = express()
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
 
 // Logs
 const morgan = require('morgan')

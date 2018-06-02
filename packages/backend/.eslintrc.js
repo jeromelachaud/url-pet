@@ -1,6 +1,7 @@
 module.exports = {
     "extends": "standard",
     // add your custom rules here
+    plugins: ["json"],
     rules: {
       // allow async-await
       'generator-star-spacing': 'off',
