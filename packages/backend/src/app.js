@@ -24,7 +24,7 @@ const userRoutes = require('./routes/user')
 app.use('/user', userRoutes)
 
 const urlRoutes = require('./routes/url')
-app.use('/url', urlRoutes)
+app.use(['/url', '/'], urlRoutes)
 
 // // Sequelize
 const { sequelize } = require('./models')

@@ -22,7 +22,7 @@ router.get(
 )
 
 router.get(
-  '/go',
+  '/:hash',
   UrlController.go,
 )
 

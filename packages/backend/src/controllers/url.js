@@ -52,8 +52,21 @@ module.exports = {
   },
 
   async go(req, res, next) {
+    const { hash } = req.params
+    const doesHashExists = await Urls.findOne({
+      attributes: ['hash', 'url'],
+      where: { hash },
+    })
+    if (!doesHashExists) {
+      return res
+        .status(404).send({ error: language.shortUrlDoesNotExist })
+    }
     try {
-      res.status(200).send('ok')
+      const { url } = doesHashExists
+      Urls.increment('visit', { where: { hash } })
+
+      res
+        .redirect(301, url)
     } catch (err) {
       res.status(500).send({ error: language.genericError })
     }

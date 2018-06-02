@@ -21,6 +21,7 @@ module.exports = function (sequelize, DataTypes) {
     },
     visit: {
       type: DataTypes.INTEGER,
+      defaultValue: '0',
     },
     createdAt: {
       type: DataTypes.DATE,
