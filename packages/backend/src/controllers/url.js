@@ -9,7 +9,9 @@ module.exports = {
     try {
       const doesUrlExist = await Urls.findOne({
         attributes: ['url', 'hash'],
-        where: { url },
+        where: {
+          url,
+        },
       })
       if (doesUrlExist) {
         return res
@@ -32,8 +34,18 @@ module.exports = {
   },
 
   async delete(req, res, next) {
+    const { hash } = req.body
     try {
-      res.status(200).send('ok')
+      const doesHashExists = await Urls.findOne({
+        attributes: ['hash'],
+        where: { hash },
+      })
+      if (!doesHashExists) {
+        return res
+          .status(404).send({ error: language.shortUrlDoesNotExist })
+      }
+      await Urls.destroy({ where: { hash } })
+      res.status(200).send({ success: language.shortUrlDestroyed })
     } catch (err) {
       res.status(500).send({ error: language.genericError })
     }

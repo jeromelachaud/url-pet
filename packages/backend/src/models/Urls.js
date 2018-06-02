@@ -29,6 +29,7 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.DATE,
     },
   }, {
+    paranoid: true,
     tableName: 'Urls',
   })
 }
