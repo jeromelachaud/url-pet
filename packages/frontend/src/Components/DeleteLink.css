@@ -1,0 +1,6 @@
+.DeleteLink::after {
+  cursor: pointer;
+  display:inline-block;
+  margin-left: 5px;
+  content: '❌';
+}

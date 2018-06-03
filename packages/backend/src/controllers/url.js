@@ -44,12 +44,12 @@ module.exports = {
       })
       if (!doesHashExists) {
         return res
-          .status(404).send({ error: language.shortUrlDoesNotExist })
+          .status(404).send({ message: language.shortUrlDoesNotExist })
       }
       await Urls.destroy({ where: { hash } })
-      res.status(200).send({ success: language.shortUrlDestroyed })
+      res.status(200).send({ message: language.shortUrlDestroyed })
     } catch (err) {
-      res.status(500).send({ error: language.genericError })
+      res.status(500).send({ message: language.genericError })
     }
   },
 

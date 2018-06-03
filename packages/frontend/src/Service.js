@@ -17,4 +17,22 @@ export const Service = {
       .then(response => response.data)
       .catch(error => error.response.data)
   },
+  list() {
+    return instance({
+      url: '/url/list',
+      method: 'get',
+    })
+      .then(response => response.data)
+      .catch(error => error.response.data)
+  },
+  delete({payload}) {
+    return instance({
+      url: '/url/delete',
+      method: 'delete',
+      data: {
+        hash: payload,
+      }})
+      .then(response => response.data)
+      .catch(error => error.response.data)
+  },
 }
