@@ -1,4 +1,17 @@
+:root {
+  --primary-color: #081c24;
+  --secondary-color: #402d2d;
+}
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 body {
+  font-size:62.5%;
   margin: 0;
   padding: 0;
   font-family: sans-serif;

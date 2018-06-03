@@ -1,0 +1,14 @@
+header {
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+h1::after {
+  display:inline-block;
+  margin-left: 5px;
+  content: '🗜';
+}

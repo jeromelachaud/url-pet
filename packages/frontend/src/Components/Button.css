@@ -1,0 +1,20 @@
+/*reset button */
+button {
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  line-height: normal;
+  overflow: visible;
+  padding: 0;
+  -webkit-appearance: button; /* for input */
+}
+.button {
+  width: 100%;
+  line-height: 2.5;
+  color: white;
+  background-color: var(--primary-color);
+}
+
+.button:hover {
+  background-color: var(--secondary-color);
+}
