@@ -16,7 +16,7 @@ module.exports = {
       if (doesUrlExist) {
         return res
           .status(409).send({
-            error: language.urlAlreadyExists,
+            message: language.urlAlreadyExists,
             shortUrl: generateUrl(doesUrlExist.hash),
           })
       }
@@ -25,11 +25,13 @@ module.exports = {
         hash: generateHash(),
       })
       res.status(201).send({
-        success: language.success,
+        message: language.success,
         shortUrl: generateUrl(newUrl.hash),
       })
     } catch (err) {
-      res.status(500).send({ error: language.genericError })
+      res.status(500).send({
+        message: err.message,
+      })
     }
   },
 

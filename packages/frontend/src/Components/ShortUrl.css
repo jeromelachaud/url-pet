@@ -1,0 +1,23 @@
+.short-url {
+  display: block;
+  padding: 1rem;
+  text-align: center;
+}
+
+.short-url__message {
+  font-size: 1rem;
+  color: var(--secondary-color);
+
+}
+.short-url__link {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: underline;
+  color: var(--primary-color);
+}
+
+.short-url__link::after {
+  display:inline-block;
+  margin-left: 5px;
+  content: '🔗';
+}

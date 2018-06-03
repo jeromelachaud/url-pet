@@ -1,0 +1,5 @@
+label, input, button, select {
+  color: var(--primary-color);
+  font-size: 1rem;
+  margin: .5rem .5rem .5rem 0;
+}
