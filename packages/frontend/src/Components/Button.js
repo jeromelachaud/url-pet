@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import './Button.css'
 
 export const Button = props => (
@@ -6,7 +7,11 @@ export const Button = props => (
   <button
     className="button"
     type="submit">
-    minify
+    {props.text}
   </button>
 
 )
+
+Button.propTypes = {
+  text: PropTypes.string.isRequired,
+}
