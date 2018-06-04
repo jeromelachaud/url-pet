@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import List from '../Components/List'
 import { Service } from '../Service'
 import { Loader } from '../Components/Loader'
@@ -13,7 +14,9 @@ export default class Admin extends Component {
   };
 
   fetchData() {
-    Service.list()
+    Service.list({
+      isAuth: this.props.location.state,
+    })
       .then(response => {
         console.log(response)
         this.setState({
@@ -24,7 +27,12 @@ export default class Admin extends Component {
   }
 
   componentWillMount() {
-    this.fetchData()
+    const {
+      location,
+      history,
+    } = this.props
+
+    location.state ? this.fetchData() : history.push('/login')
   }
 
   render() {
@@ -35,11 +43,17 @@ export default class Admin extends Component {
     }
 
     return (
-      <div
-        className="App">
-        <List
-          urls={this.state.urls} />
-      </div>
+      <List
+        urls={this.state.urls} />
     )
   }
+}
+
+Admin.propTypes = {
+  location: PropTypes.shape({
+    state: PropTypes.bool,
+  }),
+  history: PropTypes.shape({
+    history: PropTypes.func,
+  }),
 }

@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import SubmitForm from '../Components/SubmitForm'
+import LoginForm from '../Components/LoginForm'
 
 class Home extends Component {
   render() {
     return (
-      <SubmitForm />
+      <LoginForm />
     )
   }
 }

@@ -17,13 +17,15 @@ export const Service = {
       .then(response => response.data)
       .catch(error => error.response.data)
   },
-  list() {
-    return instance({
-      url: '/url/list',
-      method: 'get',
-    })
-      .then(response => response.data)
-      .catch(error => error.response.data)
+  list(isAuth) {
+    return isAuth ? (
+      instance({
+        url: '/url/list',
+        method: 'get',
+      })
+        .then(response => response.data)
+        .catch(error => error.response.data)
+    ) : false
   },
   delete({payload}) {
     return instance({
@@ -33,6 +35,17 @@ export const Service = {
         hash: payload,
       }})
       .then(response => response.data)
+      .catch(error => error.response.data)
+  },
+  login(payload) {
+    console.log({payload})
+    return instance({
+      url: '/user/login',
+      method: 'post',
+      headers: { 'Authorization': '' },
+      data: payload,
+    })
+      .then(response => response.status)
       .catch(error => error.response.data)
   },
 }

@@ -1,0 +1,6 @@
+.LoginForm__message {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1rem;
+  color: var(--primary-color);
+}

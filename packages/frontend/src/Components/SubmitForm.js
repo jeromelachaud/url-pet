@@ -4,9 +4,8 @@ import { Button } from './Button'
 import { Loader } from './Loader'
 import ShortUrl from './ShortUrl'
 import { Service } from '../Service'
-import './Form.css'
 
-export default class Form extends Component {
+export default class SubmitForm extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -33,14 +32,13 @@ export default class Form extends Component {
     })
     Service.minify({
       payload: this.state.query,
-    })
-      .then(response => {
-        this.setState({
-          isLoading: false,
-          shortUrl: response.shortUrl,
-          message: response.message,
-        })
+    }).then(res => {
+      this.setState({
+        isLoading: false,
+        shortUrl: res.shortUrl,
+        message: res.message,
       })
+    })
   }
 
   render() {
@@ -58,13 +56,19 @@ export default class Form extends Component {
         </div>
       )
     }
-
     return (
       <form
         onSubmit={this.onSubmit}>
         <InputField
+          type="email"
+          id="url"
+          htmlFor="url"
+          labelText="Enter the URL to minify"
+          placeholder="URL"
+          ariaLabel="Enter the URL to minify"
           onChange={this.onChangeQuery}/>
-        <Button/>
+        <Button
+          text="Minify this ☝️"/>
         {responseElement}
       </form>
     )
