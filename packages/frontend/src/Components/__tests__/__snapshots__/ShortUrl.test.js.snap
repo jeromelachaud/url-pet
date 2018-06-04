@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="short-url"
+>
+  <div
+    className="short-url__message"
+  >
+    string
+  </div>
+  <a
+    className="short-url__link"
+    href="string"
+  >
+    string
+  </a>
+</div>
+`;

@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <Component
+    ariaLabel="Enter the URL to minify"
+    htmlFor="url"
+    id="url"
+    labelText="Enter the URL to minify"
+    onChange={[Function]}
+    placeholder="URL"
+    type="email"
+  />
+  <Component
+    text="Minify this ☝️"
+  />
+</form>
+`;

@@ -19,5 +19,4 @@ export const Label = props => {
 Label.propTypes = {
   htmlFor: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
-  className: PropTypes.string,
 }

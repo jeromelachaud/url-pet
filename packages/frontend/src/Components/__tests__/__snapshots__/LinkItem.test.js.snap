@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<tr
+  className="LinkItem"
+>
+  <td>
+    <a />
+  </td>
+  <td>
+    <a
+      href="http://localhost:8081/undefined"
+    >
+      http://localhost:8081/undefined
+    </a>
+  </td>
+  <td
+    className="center"
+  />
+  <td
+    className="center"
+  >
+    <DeleteLink
+      handleClick={[Function]}
+    />
+  </td>
+</tr>
+`;

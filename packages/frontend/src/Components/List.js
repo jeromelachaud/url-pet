@@ -8,7 +8,6 @@ export default class Grid extends Component {
     const {
       urls,
     } = this.props
-    console.log(urls)
     const listElement = urls.map((link, i) => (
       <LinkItem
         key={i}
@@ -35,5 +34,5 @@ export default class Grid extends Component {
 }
 
 Grid.propTypes = {
-  urls: PropTypes.array,
+  urls: PropTypes.array.isRequired,
 }

@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="Loader"
+>
+  <div
+    className="DoubleBounce1"
+  />
+  <div
+    className="DoubleBounce2"
+  />
+</div>
+`;

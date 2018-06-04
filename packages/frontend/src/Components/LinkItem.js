@@ -11,7 +11,7 @@ export default class LinkItem extends Component {
     this.state = {
       isLoading: false,
       message: '',
-      isDeleted: '',
+      isDeleted: false,
     }
     this.handleClick = this.handleClick.bind(this)
   }
@@ -70,6 +70,6 @@ LinkItem.propTypes = {
   link: PropTypes.shape({
     url: PropTypes.string,
     hash: PropTypes.string,
-    visit: PropTypes.intger,
+    visit: PropTypes.integer,
   }),
 }

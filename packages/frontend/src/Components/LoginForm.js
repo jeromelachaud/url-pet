@@ -14,7 +14,7 @@ class LoginForm extends Component {
       name: '',
       pass: '',
       message: '',
-      isAuth: '',
+      isAuth: false,
     }
 
     this.onChangeLogin = this.onChangeLogin.bind(this)

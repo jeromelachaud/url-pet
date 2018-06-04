@@ -7,7 +7,6 @@ const instance = axios.create({
 
 export const Service = {
   minify({payload}) {
-    console.log(payload)
     return instance({
       url: '/url/create',
       method: 'post',
@@ -38,7 +37,6 @@ export const Service = {
       .catch(error => error.response.data)
   },
   login(payload) {
-    console.log({payload})
     return instance({
       url: '/user/login',
       method: 'post',

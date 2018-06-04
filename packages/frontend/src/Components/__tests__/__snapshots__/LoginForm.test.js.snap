@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <form
+    onSubmit={[Function]}
+  >
+    <Component
+      ariaLabel="Enter your username"
+      htmlFor="username"
+      id="username"
+      labelText="Enter your username"
+      onChange={[Function]}
+      placeholder="login"
+      type="text"
+    />
+    <Component
+      ariaLabel="Enter your password"
+      htmlFor="password"
+      id="password"
+      labelText="Enter your password"
+      onChange={[Function]}
+      placeholder="password"
+      type="password"
+    />
+    <Component
+      text="Let me in 🔓"
+    />
+  </form>
+</div>
+`;

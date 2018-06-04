@@ -8,7 +8,6 @@ export default class ShortUrl extends Component {
       link,
       message,
     } = this.props
-    console.log(link)
     return (
       <div
         className="short-url">
@@ -26,12 +25,7 @@ export default class ShortUrl extends Component {
   }
 }
 
-ShortUrl.defaultProps = {
-  link: '',
-  message: '',
-}
-
 ShortUrl.propTypes = {
-  link: PropTypes.string,
-  message: PropTypes.string,
+  link: PropTypes.string.isRequired,
+  message: PropTypes.string.isRequired,
 }

@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <Component
+    htmlFor="string"
+    text="string"
+  />
+  <input
+    aria-label="string"
+    className="input-field"
+    id="string"
+    onChange={[Function]}
+    placeholder="string"
+    required={true}
+    size="80"
+    type="string"
+  />
+</div>
+`;
