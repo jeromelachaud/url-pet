@@ -5,11 +5,14 @@ exports[`renders correctly 1`] = `
   className="LinkItem"
 >
   <td>
-    <a />
+    <a
+      target="_blank"
+    />
   </td>
   <td>
     <a
       href="http://localhost:8081/undefined"
+      target="_blank"
     >
       http://localhost:8081/undefined
     </a>

@@ -12,6 +12,7 @@ exports[`renders correctly 1`] = `
   <a
     className="short-url__link"
     href="string"
+    target="_blank"
   >
     string
   </a>
