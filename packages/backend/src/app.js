@@ -1,6 +1,4 @@
 // Config
-require('dotenv').config()
-const config = require('./config/config')
 const swaggerUi = require('swagger-ui-express')
 const swaggerDocument = require('./swagger.json')
 
@@ -29,14 +27,6 @@ app.use('/user', userRoutes)
 const urlRoutes = require('./routes/url')
 app.use(['/url', '/'], urlRoutes)
 
-// // Sequelize
-const { sequelize } = require('./models')
-sequelize.sync({ force: false })
-  .then(() => {
-    app.listen(config.port)
-    console.log(`Server started on port ${config.port}`)
-  })
-
 // Basic error handling
 app.use((req, res, next) => {
   const error = new Error('Not found')
@@ -52,3 +42,5 @@ app.use((error, req, res, next) => {
     },
   })
 })
+
+module.exports = app

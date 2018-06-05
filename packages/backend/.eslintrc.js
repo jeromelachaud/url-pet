@@ -2,6 +2,11 @@ module.exports = {
     "extends": "standard",
     // add your custom rules here
     plugins: ["json"],
+    env: {
+      es6: true,
+      jasmine: true,
+      jest: true,
+    },
     rules: {
       // allow async-await
       'generator-star-spacing': 'off',
