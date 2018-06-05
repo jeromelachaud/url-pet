@@ -52,9 +52,18 @@ export default class LinkItem extends Component {
       <tr
         className="LinkItem">
         <td>
-          <a href={url}>{url}</a>
+          <a
+            href={url}
+            target="_blank">{url}
+          </a>
         </td>
-        <td><a href={minifiedUrl}>{minifiedUrl}</a></td>
+        <td>
+          <a
+            href={minifiedUrl}
+            target="_blank">
+            {minifiedUrl}
+          </a>
+        </td>
         <td className="center">{visit}</td>
         <td className="center">
           {DeleteLinkItemElement}

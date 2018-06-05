@@ -17,7 +17,8 @@ export default class ShortUrl extends Component {
         </div>
         <a
           className="short-url__link"
-          href={link}>
+          href={link}
+          target="_blank">
           {link}
         </a>
       </div>
