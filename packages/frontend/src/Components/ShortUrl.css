@@ -16,6 +16,10 @@
   color: var(--primary-color);
 }
 
+.short-url__link:hover {
+  color: var(--secondary-color);
+}
+
 .short-url__link::after {
   display:inline-block;
   margin-left: 5px;
