@@ -2,7 +2,9 @@
   "name": "url-minifier-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "engines": {
+    "node": "8.9.1"
+  },
   "scripts": {
     "start": "node src/server.js",
     "dev": "nodemon src/server.js --exec  \"npm run lint && node\"",
