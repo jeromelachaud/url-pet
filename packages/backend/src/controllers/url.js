@@ -68,6 +68,9 @@ module.exports = {
       Urls.increment('visit', { where: { hash } })
 
       res
+        .set({
+          'Cache-Control': 'no-store',
+        })
         .redirect(301, url)
     } catch (err) {
       res.status(500).send({ error: language.genericError })
