@@ -60,7 +60,7 @@ export default class SubmitForm extends Component {
       <form
         onSubmit={this.onSubmit}>
         <InputField
-          type="email"
+          type="url"
           id="url"
           htmlFor="url"
           labelText="Enter the URL to minify"
