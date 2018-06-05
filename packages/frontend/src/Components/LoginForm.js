@@ -43,7 +43,6 @@ class LoginForm extends Component {
       name: this.state.name,
       pass: this.state.pass,
     }).then(res => {
-      console.log(res)
       this.setState({
         isLoading: false,
         isAuth: res === 200,

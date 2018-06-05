@@ -18,7 +18,6 @@ export default class Admin extends Component {
       isAuth: this.props.location.state,
     })
       .then(response => {
-        console.log(response)
         this.setState({
           isLoading: false,
           urls: response,
