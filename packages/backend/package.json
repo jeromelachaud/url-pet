@@ -14,7 +14,6 @@
   "license": "ISC",
   "dependencies": {
     "basic-auth": "^2.0.0",
-    "better-sqlite3": "^4.1.0",
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
     "dotenv": "^5.0.1",
@@ -23,8 +22,8 @@
     "jsonwebtoken": "^8.2.1",
     "morgan": "^1.9.0",
     "nodemon": "^1.14.11",
-    "sequelize": "^4.31.2",
-    "sqlite3": "3.1.13"
+    "pg": "^7.4.3",
+    "sequelize": "^4.31.2"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
