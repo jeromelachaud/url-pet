@@ -1,7 +1,7 @@
 module.exports = function (sequelize, DataTypes) {
   return sequelize.define('Urls', {
     id: {
-      type: DataTypes.UUIDV4,
+      type: DataTypes.STRING,
       defaultValue: DataTypes.UUIDV4,
       primaryKey: true,
     },
