@@ -11,7 +11,7 @@ exports[`renders correctly 1`] = `
     labelText="Enter the URL to minify"
     onChange={[Function]}
     placeholder="URL"
-    type="email"
+    type="url"
   />
   <Component
     text="Minify this ☝️"

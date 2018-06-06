@@ -10,5 +10,5 @@ h1 {
 h1::after {
   display:inline-block;
   margin-left: 5px;
-  content: '🗜';
+  content: '🔗';
 }

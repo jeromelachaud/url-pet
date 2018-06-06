@@ -9,7 +9,7 @@
     "start": "node src/server.js",
     "dev": "nodemon src/server.js --exec  \"npm run lint && node\"",
     "lint": "eslint src/**/*.js",
-    "test": "jest --runInBand --watchAll"
+    "test": "jest --runInBand"
   },
   "keywords": [],
   "author": "",
