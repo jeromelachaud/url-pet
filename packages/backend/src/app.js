@@ -5,15 +5,17 @@ const swaggerDocument = require('./swagger.json')
 // Server
 const express = require('express')
 const app = express()
+
+// Cors
+const cors = require('cors')
+app.use(cors())
+
+// Documentation
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
 
 // Logs
 const morgan = require('morgan')
 app.use(morgan('dev'))
-
-// Cors
-const cors = require('cors')
-app.use(cors())
 
 // Body parser
 const bodyParser = require('body-parser')
