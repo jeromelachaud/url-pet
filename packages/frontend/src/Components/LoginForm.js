@@ -53,11 +53,10 @@ class LoginForm extends Component {
 
   render() {
     let messageElement
-
-    if (this.state.message === '') {
+    if (this.state.isLoading) {
+      messageElement = <Loader />
+    } else if (this.state.message === '') {
       messageElement = null
-    } else if (this.state.isLoading) {
-      messageElement = (<Loader />)
     } else {
       messageElement = (
         <div
