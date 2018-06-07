@@ -43,10 +43,10 @@ export default class SubmitForm extends Component {
 
   render() {
     let responseElement
-    if (this.state.shortUrl === '') {
+    if (this.state.isLoading) {
+      responseElement = <Loader />
+    } else if (this.state.shortUrl === '') {
       responseElement = null
-    } else if (this.state.isLoading) {
-      responseElement = (<Loader />)
     } else {
       responseElement = (
         <div>
