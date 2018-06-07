@@ -88,7 +88,7 @@ describe('Test the url/delete/ path', () => {
   xit('should response to an authorized POST request with a 200', () => {
     return request(app)
       .delete('/url/delete')
-      .send({ url: `http://jeromelachaud.fr/` })
+      .send({ hash: 'anHash' })
       .set('Authorization', 'Basic amVyb21lOmFkbWlu')
       .expect(200)
   })
