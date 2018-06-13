@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import LinkItem from './LinkItem'
 import './List.css'
 
-export default class Grid extends Component {
+export default class List extends Component {
   render() {
     const {
       urls,
@@ -33,6 +33,6 @@ export default class Grid extends Component {
   }
 }
 
-Grid.propTypes = {
+List.propTypes = {
   urls: PropTypes.array.isRequired,
 }
