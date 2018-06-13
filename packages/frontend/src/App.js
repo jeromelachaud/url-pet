@@ -3,7 +3,6 @@ import { Header } from './Components/Header'
 import { BrowserRouter } from 'react-router-dom'
 
 import './App.css'
-import './index.css'
 
 import routes from './routes'
 
