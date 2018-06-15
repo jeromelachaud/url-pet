@@ -1,9 +1,9 @@
 import React from 'react'
 import { Route, Redirect, Switch } from 'react-router'
 
-import Home from './Pages/Home'
+import { Login } from './Pages/Login'
 import Admin from './Pages/Admin'
-import Login from './Pages/Login'
+import { Home } from './Pages/Home'
 
 export default (
   <Switch>

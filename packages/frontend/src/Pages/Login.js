@@ -1,12 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react'
 import LoginForm from '../Components/LoginForm'
 
-class Home extends Component {
-  render() {
-    return (
-      <LoginForm />
-    )
-  }
+export const Login = () => {
+  return (
+    <LoginForm />
+  )
 }
-
-export default Home
