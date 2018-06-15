@@ -1,12 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react'
 import SubmitForm from '../Components/SubmitForm'
 
-class Home extends Component {
-  render() {
-    return (
-      <SubmitForm />
-    )
-  }
+export const Home = () => {
+  return (
+    <SubmitForm />
+  )
 }
-
-export default Home
