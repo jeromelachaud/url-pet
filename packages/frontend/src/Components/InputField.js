@@ -3,25 +3,36 @@ import { Label } from './Label'
 import PropTypes from 'prop-types'
 import './InputField.css'
 
-export const InputField = props => (
-  <div>
-    <Label
-      htmlFor={props.htmlFor}
-      text={props.labelText}/>
+export const InputField = props => {
+  const {
+    htmlFor,
+    labelText,
+    type,
+    ariaLabel,
+    id,
+    placeholder,
+    onChange,
+  } = props
 
-    <input
-      required
-      size="80"
-      type={props.type}
-      aria-label={props.ariaLabel}
-      id={props.id}
-      className="input-field"
-      placeholder={props.placeholder}
-      onChange={props.onChange}>
-    </input>
-  </div>
+  return (
+    <div>
+      <Label
+        htmlFor={htmlFor}
+        text={labelText}/>
 
-)
+      <input
+        required
+        size="80"
+        type={type}
+        aria-label={ariaLabel}
+        id={id}
+        className="input-field"
+        placeholder={placeholder}
+        onChange={onChange}>
+      </input>
+    </div>
+  )
+}
 
 InputField.propTypes = {
   onChange: PropTypes.func.isRequired,
