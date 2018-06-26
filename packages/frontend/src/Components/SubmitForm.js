@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { InputField } from './InputField'
 import { Button } from './Button'
 import { Loader } from './Loader'
-import ShortUrl from './ShortUrl'
+import { ShortUrl } from './ShortUrl'
 import { Service } from '../Service'
 
 export default class SubmitForm extends Component {
