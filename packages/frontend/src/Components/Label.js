@@ -2,12 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import './Label.css'
 
-export const Label = props => {
-  const {
-    htmlFor,
-    text,
-  } = props
-
+export const Label = ({htmlFor, text}) => {
   return (
     <label
       htmlFor={htmlFor}>
