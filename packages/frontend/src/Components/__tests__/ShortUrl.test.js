@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import ShortUrl from '../ShortUrl'
+import { ShortUrl } from '../ShortUrl'
 
 const link = 'string'
 const message = 'string'
