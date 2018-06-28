@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import { Header } from './Components/Header'
-import App from './App'
+import { App } from './App'
 
 const tree = shallow(
   <App />

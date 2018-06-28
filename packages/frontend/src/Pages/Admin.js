@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import List from '../Components/List'
+import { List } from '../Components/List'
 import { Service } from '../Service'
 import { Loader } from '../Components/Loader'
 
