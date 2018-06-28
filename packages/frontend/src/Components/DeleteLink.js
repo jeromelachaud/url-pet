@@ -2,14 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import './DeleteLink.css'
 
-const DeleteLink = ({hash, handleClick}) => {
-  return (
-    <span
-      className="DeleteLink"
-      onClick={() => handleClick(hash)}>
-    </span>
-  )
-}
+const DeleteLink = ({hash, handleClick}) => (
+  <span
+    className="DeleteLink"
+    onClick={() => handleClick(hash)}>
+  </span>
+)
 
 DeleteLink.propTypes = {
   handleClick: PropTypes.func,
