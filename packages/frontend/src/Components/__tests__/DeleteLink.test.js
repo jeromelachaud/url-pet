@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import DeleteLink from '../DeleteLink'
+import { DeleteLink } from '../DeleteLink'
 
 const handleClick = function () { }
 const hash = 'string'

@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import './DeleteLink.css'
 
-const DeleteLink = ({hash, handleClick}) => (
+export const DeleteLink = ({hash, handleClick}) => (
   <span
     className="DeleteLink"
     onClick={() => handleClick(hash)}>
@@ -13,5 +13,3 @@ DeleteLink.propTypes = {
   handleClick: PropTypes.func,
   hash: PropTypes.string,
 }
-
-export default DeleteLink

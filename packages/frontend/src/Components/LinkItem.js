@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import DeleteLink from './DeleteLink'
+import { DeleteLink } from './DeleteLink'
 import { Service } from '../Service'
 import { Loader } from './Loader'
 import './LinkItem.css'

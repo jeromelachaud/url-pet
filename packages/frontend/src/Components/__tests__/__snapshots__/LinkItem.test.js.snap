@@ -23,7 +23,7 @@ exports[`renders correctly 1`] = `
   <td
     className="center"
   >
-    <DeleteLink
+    <Component
       handleClick={[Function]}
     />
   </td>
