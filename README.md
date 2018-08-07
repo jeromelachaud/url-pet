@@ -2,7 +2,7 @@
 
 ## Instructions
 - Clone the repo
-- `npm i` to install all the depencies
+- `npm i` to install all the dependencies
 
 ### Backend
 - `cd url-minifier/packages/backend && npm start` to start the server
