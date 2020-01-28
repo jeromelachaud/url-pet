@@ -1,7 +1,6 @@
 {
-  "name": "frontend",
-  "version": "0.1.0",
-  "private": true,
+  "name": "url-minifier-frontend",
+  "version": "1.0.0",
   "dependencies": {
     "axios": "^0.18.1",
     "react": "^16.4.0",
