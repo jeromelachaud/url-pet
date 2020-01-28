@@ -50,10 +50,10 @@ describe('Test the url/create/ path', () => {
       .expect(201)
   })
 
-  xit('should response to an authorized POST request that has the same payload with a 409', () => {
+  it('should response to an authorized POST request that has the same payload with a 409', () => {
     return request(app)
       .post('/url/create')
-      .send({ url: `http://alreadysent.fr/` })
+      .send({ url: `http://alreadysent.com/` })
       .set('Authorization', 'Basic amVyb21lOmFkbWlu')
       .expect(409)
   })
@@ -85,10 +85,10 @@ describe('Test the url/delete/ path', () => {
       .expect(401)
   })
 
-  xit('should response to an authorized POST request with a 200', () => {
+  it('should response to an authorized POST request with a 200', () => {
     return request(app)
       .delete('/url/delete')
-      .send({ hash: 'anHash' })
+      .send({ hash: 'n44rk' })
       .set('Authorization', 'Basic amVyb21lOmFkbWlu')
       .expect(200)
   })
@@ -135,7 +135,7 @@ describe('Test the /:hash path', () => {
       .expect(404)
   })
 
-  it('should response to a POST request with a 401', () => {
+  it('should response to a POST request with a 404', () => {
     return request(app)
       .post(`/${generateHash()}`)
       .expect(404)
