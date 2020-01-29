@@ -7,7 +7,7 @@ context('Login Page', () => {
     it('should have a header', () => {
       cy.get('.Header')
         .find('h1')
-        .should('have.text', 'URL Minifier')
+        .should('have.text', 'url.pet')
     })
 
     it('should have a form', () => {

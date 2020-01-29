@@ -7,16 +7,14 @@ context('Home Page', () => {
     it('should have a header', () => {
       cy.get('.Header')
         .find('h1')
-        .should('have.text', 'URL Minifier')
+        .should('have.text', 'url.pet')
     })
 
     it('should have a form', () => {
       cy.get('#minifier-form').within(() => {
-        cy.get('label#url')
-          .should('have.text', 'Enter the URL to minify')
-          .should('have.attr', 'for', 'url')
+        cy.get('label#url').should('have.attr', 'for', 'url')
         cy.get('input#url').should('have.attr', 'placeholder', 'URL')
-        cy.get('button#button').should('have.text', 'Minify this☝️')
+        cy.get('button#button').should('have.text', 'Minify this ☝️')
       })
     })
   })

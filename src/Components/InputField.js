@@ -16,7 +16,7 @@ export const InputField = props => (
       className="input-field"
       placeholder={props.placeholder}
       onChange={props.onChange}
-    ></input>
+    />
   </div>
 )
 
@@ -27,5 +27,5 @@ InputField.propTypes = {
   placeholder: PropTypes.string.isRequired,
   htmlFor: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
-  labelText: PropTypes.string.isRequired,
+  labelText: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
 }

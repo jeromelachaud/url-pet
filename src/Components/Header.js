@@ -3,6 +3,6 @@ import './Header.css'
 
 export const Header = () => (
   <header className="Header">
-    <h1>URL Minifier</h1>
+    <h1>url.pet</h1>
   </header>
 )

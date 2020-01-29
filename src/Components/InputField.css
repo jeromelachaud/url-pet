@@ -1,9 +1,9 @@
 .input-field {
-  border:1px solid lightgrey;
-  -webkit-appearance:textfield;
+  border: 1px solid lightgrey;
+  -webkit-appearance: textfield;
   width: 100%;
-  padding: 0 8px 0;
-  line-height: 40px;
+  padding: 0 10px 0;
+  line-height: 60px;
   outline: none;
 }
 

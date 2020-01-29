@@ -1,6 +1,7 @@
 :root {
-  --primary-color: #081c24;
-  --secondary-color: #402d2d;
+  --primary-color: 8, 28, 36;
+  --secondary-color: rgba(var(--primary-color), 0.75);
+  --third-color: green;
 }
 
 html {
@@ -13,9 +14,11 @@ html {
 }
 
 body {
-  font-size: 62.5%;
+  display: grid;
+  height: 100vh;
   margin: 0;
-  padding: 0;
+  place-items: center center;
+  font-size: 62.5%;
   font-family: sans-serif;
 }
 

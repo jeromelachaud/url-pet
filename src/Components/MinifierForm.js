@@ -49,7 +49,9 @@ export default class MinifierForm extends Component {
       responseElement = null
     } else {
       responseElement = (
-        <ShortUrl message={this.state.message} link={this.state.shortUrl} />
+        <div>
+          <ShortUrl message={this.state.message} link={this.state.shortUrl} />
+        </div>
       )
     }
     return (
@@ -58,12 +60,12 @@ export default class MinifierForm extends Component {
           type="url"
           id="url"
           htmlFor="url"
-          labelText="Enter the URL to minify"
+          labelText={false}
           placeholder="URL"
           ariaLabel="Enter the URL to minify"
           onChange={this.onChangeQuery}
         />
-        <Button text="Minify this☝️" />
+        <Button text="Minify this ☝️" />
         {responseElement}
       </form>
     )

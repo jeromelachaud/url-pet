@@ -14,5 +14,5 @@ export const Label = props => {
 
 Label.propTypes = {
   htmlFor: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
+  text: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
 }
