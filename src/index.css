@@ -1,0 +1,29 @@
+:root {
+  --primary-color: #081c24;
+  --secondary-color: #402d2d;
+}
+
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 62.5%;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+label,
+input,
+button,
+select {
+  color: var(--primary-color);
+  font-size: 1rem;
+  margin: 0 0 1rem 0;
+}
