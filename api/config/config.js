@@ -20,6 +20,18 @@ module.exports = {
       },
     },
   },
+  test: {
+    port: SERVER_PORT,
+    rootUrl: ROOT_URL,
+    database: {
+      options: {
+        dialect: 'sqlite',
+        storage: path.resolve(__dirname, '../url-minifier.sqlite3'),
+        operatorsAliases: { $and: Sequelize.Op.and },
+        logging: false,
+      },
+    },
+  },
   production: {
     port: SERVER_PORT,
     rootUrl: `https://${process.env.HEROKU_APP_NAME}.com`,

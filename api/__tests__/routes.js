@@ -1,15 +1,9 @@
 require('dotenv').config()
 const request = require('supertest')
-const app = require('../app')
-const { generateHash } = require('../helper/generateHash')
+const app = require('../server')
+const { generateHash } = require('../helpers/generateHash')
 
 describe('Test the root path', () => {
-  it('should response to a GET request with a 404', () => {
-    return request(app)
-      .get('/')
-      .expect(404)
-  })
-
   it('should response to a POST request with a 404', () => {
     return request(app)
       .post('/')
@@ -45,7 +39,7 @@ describe('Test the url/create/ path', () => {
   it('should response to an authorized POST request with a 201', () => {
     return request(app)
       .post('/url/create')
-      .send({ url: `http://${generateHash()}.fr/` })
+      .send({ url: `https://newly_created.com` })
       .set('Authorization', 'Basic amVyb21lOmFkbWlu')
       .expect(201)
   })
@@ -53,7 +47,7 @@ describe('Test the url/create/ path', () => {
   it('should response to an authorized POST request that has the same payload with a 409', () => {
     return request(app)
       .post('/url/create')
-      .send({ url: `http://alreadysent.com/` })
+      .send({ url: `https://already_created.com` })
       .set('Authorization', 'Basic amVyb21lOmFkbWlu')
       .expect(409)
   })
@@ -88,7 +82,7 @@ describe('Test the url/delete/ path', () => {
   it('should response to an authorized POST request with a 200', () => {
     return request(app)
       .delete('/url/delete')
-      .send({ hash: 'n44rk' })
+      .send({ hash: 'p69Tn' })
       .set('Authorization', 'Basic amVyb21lOmFkbWlu')
       .expect(200)
   })
@@ -141,10 +135,10 @@ describe('Test the /:hash path', () => {
       .expect(404)
   })
 
-  xit('should response to an GET request set with a 200', () => {
+  it('should response to an GET request set with a 200', () => {
     return request(app)
-      .get(`/${generateHash()}`)
-      .expect(200)
+      .get(`/n44rk`)
+      .expect(301)
   })
 })
 

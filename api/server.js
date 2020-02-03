@@ -7,10 +7,6 @@ const express = require('express')
 const server = express()
 server.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
 
-// Logs
-// const morganBody = require('morgan-body')
-// morganBody(server)
-
 // Cors
 const cors = require('cors')
 server.use(cors())

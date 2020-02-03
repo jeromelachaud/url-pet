@@ -1,6 +1,5 @@
 const config = require('../config/config')
 const alphabet = config.alphabet.key
-console.log('TCL: alphabet', alphabet)
 
 module.exports.generateHash = () => {
   let hash = ''

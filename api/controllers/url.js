@@ -1,8 +1,8 @@
 const { Urls } = require('../models')
 const language = require('../languages/').urlController
 
-const { generateHash } = require('../helper/generateHash')
-const { generateUrl } = require('../helper/generateUrl')
+const { generateHash } = require('../helpers/generateHash')
+const { generateUrl } = require('../helpers/generateUrl')
 module.exports = {
   async create(req, res, next) {
     const { url } = req.body
@@ -23,13 +23,13 @@ module.exports = {
         url,
         hash: generateHash(),
       })
-      console.log('TCL: create -> newUrl', newUrl)
       res.status(201).send({
         message: language.success,
         shortUrl: generateUrl(newUrl.hash),
       })
     } catch (err) {
       console.log('TCL: create -> err', err)
+      res.status(500).send({ message: language.genericError })
     }
   },
 
@@ -46,7 +46,8 @@ module.exports = {
       await Urls.destroy({ where: { hash } })
       res.status(200).send({ message: language.shortUrlDestroyed })
     } catch (err) {
-      // res.status(500).send({ message: language.genericError })
+      console.log('TCL: delete -> err', err)
+      res.status(500).send({ message: language.genericError })
     }
   },
 
