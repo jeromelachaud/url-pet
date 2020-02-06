@@ -6,8 +6,6 @@
   "author": "jerome.lachaud@gmail.com",
   "license": "MIT",
   "scripts": {
-    "preinstall": "yarn clean",
-    "clean": "find . -type d -name node_modules -exec rm -rf {} +",
     "start:server": "NODE_ENV=production node start",
     "start:server:dev": "DEBUG=express:* nodemon start",
     "test:server": "jest  --runInBand ./api",
