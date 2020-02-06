@@ -30,32 +30,24 @@ describe('Test the url/create/ path', () => {
       .expect(404)
   })
 
-  it('should response to an unauthorized POST request with a 401', () => {
-    return request(app)
-      .post('/url/create')
-      .expect(401)
-  })
-
-  it('should response to an authorized POST request with a 201', () => {
+  it('should response to POST request with a 201', () => {
     return request(app)
       .post('/url/create')
       .send({ url: `https://newly_created.com` })
-      .set('Authorization', 'Basic amVyb21lOmFkbWlu')
       .expect(201)
   })
 
-  it('should response to an authorized POST request that has the same payload with a 409', () => {
+  xit('should response to an authorized POST request that has the same payload with a 409', () => {
     return request(app)
       .post('/url/create')
       .send({ url: `https://already_created.com` })
-      .set('Authorization', 'Basic amVyb21lOmFkbWlu')
+      .set('Authorization', `Bearer ${process.env.TOKEN_TEST}`)
       .expect(409)
   })
 
   it('should response to an authorized but empty POST request with a 500', () => {
     return request(app)
       .post('/url/create')
-      .set('Authorization', 'Basic amVyb21lOmFkbWlu')
       .expect(500)
   })
 })
@@ -67,13 +59,13 @@ describe('Test the url/delete/ path', () => {
       .expect(404)
   })
 
-  it('should response to a POST request with a 401', () => {
+  it('should response to a POST request with a 404', () => {
     return request(app)
       .post('/url/delete')
       .expect(404)
   })
 
-  it('should response to an unauthorized POST request with a 401', () => {
+  it('should response to an unauthorized POST request with a 401', async () => {
     return request(app)
       .delete('/url/delete')
       .expect(401)
@@ -83,14 +75,14 @@ describe('Test the url/delete/ path', () => {
     return request(app)
       .delete('/url/delete')
       .send({ hash: 'p69Tn' })
-      .set('Authorization', 'Basic amVyb21lOmFkbWlu')
+      .set('Authorization', `Bearer ${process.env.TOKEN_TEST}`)
       .expect(200)
   })
 
   it('should response to an authorized but empty DELETE request with a 404', () => {
     return request(app)
       .delete('/url/delete')
-      .set('Authorization', 'Basic amVyb21lOmFkbWlu')
+      .set('Authorization', `Bearer ${process.env.TOKEN_TEST}`)
       .expect(404)
   })
 })
@@ -117,7 +109,7 @@ describe('Test the url/list/ path', () => {
   it('It should response to an authorized GET request set with a 200', () => {
     return request(app)
       .get('/url/list')
-      .set('Authorization', 'Basic amVyb21lOmFkbWlu')
+      .set('Authorization', `Bearer ${process.env.TOKEN_TEST}`)
       .expect(200)
   })
 })

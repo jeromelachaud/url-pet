@@ -20,7 +20,8 @@ export default class LinkItem extends Component {
       isLoading: true,
     })
     Service.delete({
-      payload: hash,
+      hash,
+      token: localStorage.getItem('token'),
     }).then(res => {
       this.setState({
         isLoading: false,
@@ -31,11 +32,7 @@ export default class LinkItem extends Component {
   }
 
   render() {
-    const {
-      url,
-      hash,
-      visit,
-    } = this.props.link
+    const { url, hash, visit } = this.props.link
 
     let DeleteLinkItemElement
     this.state.isLoading ? DeleteLinkItemElement = (<Loader />) : (

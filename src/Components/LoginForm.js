@@ -40,12 +40,14 @@ class LoginForm extends Component {
       isLoading: true,
     })
     Service.login({
-      username: this.state.name,
-      password: this.state.pass,
+      name: this.state.name,
+      pass: this.state.pass,
     }).then(res => {
+      const token = res.data
+      localStorage.setItem('token', token)
       this.setState({
         isLoading: false,
-        isAuth: res === 200,
+        isAuth: res.status === 200,
         message: res.message,
       })
     })

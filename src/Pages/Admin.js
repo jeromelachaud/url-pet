@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import React, { Component } from 'react'
 import List from '../Components/List'
-import { Service } from '../Service'
 import { Loader } from '../Components/Loader'
+import { Service } from '../Service'
 
 export default class Admin extends Component {
   constructor(props) {
@@ -11,40 +11,38 @@ export default class Admin extends Component {
       isLoading: true,
       urls: [],
     }
-  };
+  }
+
+  getTokenFromLocalStorage() {
+    return localStorage.getItem('token')
+  }
 
   fetchData() {
     Service.list({
       isAuth: this.props.location.state,
-    })
-      .then(response => {
-        this.setState({
-          isLoading: false,
-          urls: response,
-        })
+      token: this.getTokenFromLocalStorage(),
+    }).then(response => {
+      this.setState({
+        isLoading: false,
+        urls: response,
       })
+    })
   }
 
   componentWillMount() {
-    const {
-      location,
-      history,
-    } = this.props
+    const { location, history } = this.props
 
-    location.state ? this.fetchData() : history.push('/login')
+    location.state && this.getTokenFromLocalStorage()
+      ? this.fetchData()
+      : history.push('/login')
   }
 
   render() {
     if (this.state.isLoading) {
-      return (
-        <Loader />
-      )
+      return <Loader />
     }
 
-    return (
-      <List
-        urls={this.state.urls} />
-    )
+    return <List urls={this.state.urls} />
   }
 }
 

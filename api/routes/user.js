@@ -1,13 +1,8 @@
 const express = require('express')
 const router = express.Router()
 const { basicAuth } = require('../middleware/basicAuth')
+const UserController = require('../controllers/user')
 
-router.post(
-  '/login',
-  basicAuth,
-  (req, res) => {
-    res.sendStatus(200)
-  }
-)
+router.post('/login', basicAuth, UserController.login)
 
 module.exports = router

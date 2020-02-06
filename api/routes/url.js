@@ -1,29 +1,14 @@
 const UrlController = require('../controllers/url')
 const express = require('express')
 const router = express.Router()
-const { basicAuth } = require('../middleware/basicAuth')
+const { jwtMiddleware } = require('../middleware/jwtMiddleware')
 
-router.post(
-  '/create',
-  basicAuth,
-  UrlController.create,
-)
+router.post('/create', UrlController.create)
 
-router.delete(
-  '/delete',
-  basicAuth,
-  UrlController.delete,
-)
+router.delete('/delete', jwtMiddleware, UrlController.delete)
 
-router.get(
-  '/list',
-  basicAuth,
-  UrlController.list,
-)
+router.get('/list', jwtMiddleware, UrlController.list)
 
-router.get(
-  '/:hash',
-  UrlController.go,
-)
+router.get('/:hash', UrlController.go)
 
 module.exports = router

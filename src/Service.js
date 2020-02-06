@@ -1,8 +1,8 @@
+/* eslint-disable indent */
 import axios from 'axios'
 
 const instance = axios.create({
   baseURL: 'http://localhost:8081',
-  headers: { Authorization: 'Basic amVyb21lOmFkbWlu' },
 })
 
 export const Service = {
@@ -17,9 +17,11 @@ export const Service = {
       .then(response => response.data)
       .catch(error => error.response.data)
   },
-  list(isAuth) {
+  list(payload) {
+    const { isAuth, token } = payload
     return isAuth
       ? instance({
+          headers: { Authorization: `Bearer ${token}` },
           url: '/url/list',
           method: 'get',
         })
@@ -27,13 +29,13 @@ export const Service = {
           .catch(error => error.response.data)
       : false
   },
-  delete({ payload }) {
+  delete(payload) {
+    const { hash, token } = payload
     return instance({
+      headers: { Authorization: `Bearer ${token}` },
       url: '/url/delete',
       method: 'delete',
-      data: {
-        hash: payload,
-      },
+      data: { hash },
     })
       .then(response => response.data)
       .catch(error => error.response.data)
@@ -42,10 +44,9 @@ export const Service = {
     return instance({
       url: '/user/login',
       method: 'post',
-      headers: { Authorization: '' },
       data: payload,
     })
-      .then(response => response.status)
+      .then(response => response)
       .catch(error => error.response.data)
   },
 }
