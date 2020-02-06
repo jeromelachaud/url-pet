@@ -5,6 +5,7 @@ module.exports = {
   env: {
     es6: true,
     jasmine: true,
+    browser: true,
   },
   // https://github.com/feross/standard/blob/master/RULES.md#javascript-standard-style
   extends: ['standard', 'plugin:react/recommended'],
@@ -21,7 +22,7 @@ module.exports = {
     'generator-star-spacing': 'off',
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'comma-dangle': ['error', 'always-multiline'],
+    'comma-dangle': ['error', 'only-multiline'],
     'space-before-function-paren': [
       'warn',
       {
@@ -31,5 +32,7 @@ module.exports = {
       },
     ],
     'no-unused-vars': 'warn',
+    // Disable 'indent' rule so it doesn"t confkit with Prettier
+    indent: 'off',
   },
 }
