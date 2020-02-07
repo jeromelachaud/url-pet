@@ -8,7 +8,6 @@ module.exports = {
   },
   urlController: {
     success: 'The short url has been successfully created! 👌',
-    urlAlreadyExists: 'This url has already been shortened 🧐',
     shortUrlDoesNotExist: 'This short url does not exist 🤔',
     shortUrlDestroyed: 'This short url has been successfully deleted 🤯',
     genericError,

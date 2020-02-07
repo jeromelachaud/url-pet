@@ -37,14 +37,6 @@ describe('Test the url/create/ path', () => {
       .expect(201)
   })
 
-  xit('should response to an authorized POST request that has the same payload with a 409', () => {
-    return request(app)
-      .post('/url/create')
-      .send({ url: `https://already_created.com` })
-      .set('Authorization', `Bearer ${process.env.TOKEN_TEST}`)
-      .expect(409)
-  })
-
   it('should response to an authorized but empty POST request with a 500', () => {
     return request(app)
       .post('/url/create')

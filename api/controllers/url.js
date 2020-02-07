@@ -7,18 +7,6 @@ module.exports = {
   async create(req, res, next) {
     const { url } = req.body
     try {
-      const doesUrlExist = await Urls.findOne({
-        attributes: ['url', 'hash'],
-        where: {
-          url,
-        },
-      })
-      if (doesUrlExist) {
-        return res.status(409).send({
-          message: language.urlAlreadyExists,
-          shortUrl: generateUrl(doesUrlExist.hash),
-        })
-      }
       const newUrl = await Urls.create({
         url,
         hash: generateHash(),
