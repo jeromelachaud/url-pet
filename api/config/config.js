@@ -3,65 +3,66 @@ require('dotenv').config()
 const path = require('path')
 const Sequelize = require('sequelize')
 
-let SERVER_HOST = 'localhost'
-let SERVER_PORT = process.env.PORT || 8081
-let SERVER_PROTOCOL = 'http' // Note: I did not test https yet, so you might need more adjustments to make it work
+const SERVER_HOST = 'localhost'
+const SERVER_PORT = process.env.PORT || 8081
+const SERVER_PROTOCOL = 'http' // Note: I did not test https yet, so you might need more adjustments to make it work
 let ROOT_URL = `${SERVER_PROTOCOL}://${SERVER_HOST}:${SERVER_PORT}`
+const DB_USERNAME = 'admin'
+const DB_PASSWORD = 'password'
 
 module.exports = {
   development: {
-    port: SERVER_PORT,
     rootUrl: ROOT_URL,
-    database: {
-      options: {
-        dialect: 'sqlite',
-        storage: path.resolve(__dirname, '../url-minifier.sqlite3'),
-        operatorsAliases: { $and: Sequelize.Op.and },
-      },
+    database: 'url.pet.local',
+    username: DB_USERNAME,
+    password: DB_PASSWORD,
+    dialect: 'postgres',
+    operatorsAliases: false,
+    options: {
+      protocol: 'postgres',
+      dialect: 'postgres',
+      operatorsAliases: false,
     },
   },
   test: {
-    port: SERVER_PORT,
     rootUrl: ROOT_URL,
-    database: {
-      options: {
-        dialect: 'sqlite',
-        storage: path.resolve(__dirname, '../url-minifier.sqlite3'),
-        operatorsAliases: { $and: Sequelize.Op.and },
-        logging: false,
-      },
+    options: {
+      dialect: 'sqlite',
+      storage: path.resolve(__dirname, '../url-minifier.sqlite3'),
+      operatorsAliases: { $and: Sequelize.Op.and },
+      logging: false,
     },
   },
   production: {
-    port: SERVER_PORT,
     rootUrl: `https://${process.env.HEROKU_APP_NAME}.com`,
-    database: {
+    dialect: 'postgres',
+    operatorsAliases: false,
+    use_env_variable: 'DATABASE_URL',
+    dialect: 'postgres',
+    ssl: true,
+    dialectOptions: {
+      ssl: {
+        require: true,
+      },
+    },
+    logging: true,
+    operatorsAliases: false,
+    options: {
       use_env_variable: 'DATABASE_URL',
       dialect: 'postgres',
       ssl: true,
+      protocol: 'postgres',
       dialectOptions: {
         ssl: {
           require: true,
         },
       },
       logging: true,
+      benchmark: true,
       operatorsAliases: false,
-      options: {
-        use_env_variable: 'DATABASE_URL',
-        dialect: 'postgres',
-        ssl: true,
-        protocol: 'postgres',
-        dialectOptions: {
-          ssl: {
-            require: true,
-          },
-        },
-        logging: true,
-        benchmark: true,
-        operatorsAliases: false,
-      },
     },
   },
+  server_port: SERVER_PORT,
   basicAuth: {
     credentials: {
       username: process.env.ADMIN_USERNAME,

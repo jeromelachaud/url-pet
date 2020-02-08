@@ -1,15 +1,23 @@
 module.exports = {
   up: (queryInterface, Sequelize) =>
-    queryInterface.createTable('release', {
+    queryInterface.createTable('urls', {
       id: {
         type: Sequelize.UUID,
         allowNull: false,
         primaryKey: true,
         defaultValue: Sequelize.UUIDV4,
       },
-      discogs_id: {
-        unique: true,
+      url: {
         allowNull: false,
+        type: Sequelize.STRING,
+      },
+      hash: {
+        allowNull: false,
+        type: Sequelize.CHAR(5),
+      },
+      visit: {
+        allowNull: false,
+        defaultValue: 0,
         type: Sequelize.INTEGER,
       },
       createdAt: {
@@ -24,5 +32,5 @@ module.exports = {
         type: Sequelize.DATE,
       },
     }),
-  down: queryInterface => queryInterface.dropTable('release'),
+  down: queryInterface => queryInterface.dropTable('urls'),
 }

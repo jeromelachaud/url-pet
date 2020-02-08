@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start:server": "NODE_ENV=production node start",
-    "start:server:dev": "DEBUG=express:* nodemon start",
+    "start:server:dev": "NODE_ENV=development DEBUG=express:* nodemon start",
     "test:server": "jest  --runInBand ./api",
     "start:client": "react-scripts start",
     "build:client": "react-scripts build",
@@ -26,6 +26,7 @@
     "morgan": "^1.9.1",
     "morgan-body": "^2.4.8",
     "nodemon": "^1.14.11",
+    "pg": "^7.18.1",
     "react": "^16.4.0",
     "react-dom": "^16.12.0",
     "react-scripts": "1.1.4",

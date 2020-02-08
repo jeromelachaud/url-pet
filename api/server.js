@@ -1,11 +1,11 @@
 // Config
-const swaggerUi = require('swagger-ui-express')
-const swaggerDocument = require('./swagger.json')
+// const swaggerUi = require('swagger-ui-express')
+// const swaggerDocument = require('./swagger.json')
 
 // Server
 const express = require('express')
 const server = express()
-server.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
+// server.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
 
 // Cors
 const cors = require('cors')
@@ -29,8 +29,7 @@ server.use(['/url', '/'], urlRoutes)
 
 const models = require('./models')
 models.sequelize
-  // .authenticate()
-  .sync()
+  .authenticate()
   .then(() => {
     console.log('Connection to the database has been established successfully.')
   })

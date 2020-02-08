@@ -3,7 +3,7 @@ require('dotenv').config()
 const config = require('./api/config/config')
 const web = require('./api/server')
 
-const PORT = config[process.env.NODE_ENV].port
+const PORT = config.server_port
 
 web
   .listen(PORT, () => {

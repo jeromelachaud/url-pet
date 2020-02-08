@@ -1,36 +1,40 @@
-module.exports = function (sequelize, DataTypes) {
-  return sequelize.define('Urls', {
-    id: {
-      type: DataTypes.UUIDV4,
-      defaultValue: DataTypes.UUIDV4,
-      primaryKey: true,
-    },
-    url: {
-      type: DataTypes.STRING(255),
-      allowNull: false,
-      validate: {
-        notEmpty: true,
-        len: {
-          args: [10, 200],
-          msg: 'Please provide field within 12 to 200 characters.',
+module.exports = (sequelize, Sequelize) => {
+  return sequelize.define(
+    'urls',
+    {
+      id: {
+        type: Sequelize.UUID,
+        defaultValue: Sequelize.UUIDV4,
+        primaryKey: true,
+      },
+      url: {
+        type: Sequelize.STRING(255),
+        allowNull: false,
+        validate: {
+          notEmpty: true,
+          len: {
+            args: [10, 200],
+            msg: 'Please provide field within 12 to 200 characters.',
+          },
         },
       },
+      hash: {
+        type: Sequelize.STRING(5),
+      },
+      visit: {
+        type: Sequelize.INTEGER,
+        defaultValue: '0',
+      },
+      createdAt: {
+        type: Sequelize.DATE,
+      },
+      updatedAt: {
+        type: Sequelize.DATE,
+      },
     },
-    hash: {
-      type: DataTypes.STRING(5),
-    },
-    visit: {
-      type: DataTypes.INTEGER,
-      defaultValue: '0',
-    },
-    createdAt: {
-      type: DataTypes.DATE,
-    },
-    updatedAt: {
-      type: DataTypes.DATE,
-    },
-  }, {
-    paranoid: true,
-    tableName: 'Urls',
-  })
+    {
+      paranoid: true,
+      tableName: 'urls',
+    }
+  )
 }

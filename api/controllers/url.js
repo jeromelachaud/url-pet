@@ -1,4 +1,4 @@
-const { Urls } = require('../models')
+const { urls: Urls } = require('../models')
 const language = require('../languages/').urlController
 
 const { generateHash } = require('../helpers/generateHash')
