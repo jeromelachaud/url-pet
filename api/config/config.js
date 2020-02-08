@@ -34,7 +34,7 @@ module.exports = {
     },
   },
   production: {
-    rootUrl: `https://${process.env.HEROKU_APP_NAME}.com`,
+    rootUrl: `https://${process.env.HEROKU_APP_NAME}.herokuapp.com`,
     dialect: 'postgres',
     operatorsAliases: false,
     use_env_variable: 'DATABASE_URL',

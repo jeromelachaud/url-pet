@@ -1,10 +1,9 @@
-import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import DeleteLink from './DeleteLink'
+import React, { Component } from 'react'
 import { Service } from '../Service'
-import { Loader } from './Loader'
+import DeleteLink from './DeleteLink'
 import './LinkItem.css'
-
+import { Loader } from './Loader'
 export default class LinkItem extends Component {
   constructor(props) {
     super(props)
@@ -35,38 +34,32 @@ export default class LinkItem extends Component {
     const { url, hash, visit } = this.props.link
 
     let DeleteLinkItemElement
-    this.state.isLoading ? DeleteLinkItemElement = (<Loader />) : (
-      DeleteLinkItemElement = (
-        <DeleteLink
-          handleClick={this.handleClick}
-          hash={hash}/>
-      )
-    )
+    this.state.isLoading
+      ? (DeleteLinkItemElement = <Loader />)
+      : (DeleteLinkItemElement = (
+          <DeleteLink handleClick={this.handleClick} hash={hash} />
+        ))
 
     let LinkItemElement
-    const minifiedUrl = `http://localhost:8081/${hash}`
-    !this.state.isDeleted ? LinkItemElement = (
-      <tr
-        className="LinkItem">
-        <td>
-          <a
-            href={url}
-            target="_blank">{url}
-          </a>
-        </td>
-        <td>
-          <a
-            href={minifiedUrl}
-            target="_blank">
-            {minifiedUrl}
-          </a>
-        </td>
-        <td className="center">{visit}</td>
-        <td className="center">
-          {DeleteLinkItemElement}
-        </td>
-      </tr>
-    ) : LinkItemElement = null
+    const minifiedUrl = `${process.env.REACT_APP_HOST}/${hash}`
+    !this.state.isDeleted
+      ? (LinkItemElement = (
+          <tr className="LinkItem">
+            <td>
+              <a href={url} target="_blank" rel="noopener noreferrer">
+                {url}
+              </a>
+            </td>
+            <td>
+              <a href={minifiedUrl} target="_blank" rel="noopener noreferrer">
+                {minifiedUrl}
+              </a>
+            </td>
+            <td className="center">{visit}</td>
+            <td className="center">{DeleteLinkItemElement}</td>
+          </tr>
+        ))
+      : (LinkItemElement = null)
 
     return LinkItemElement
   }

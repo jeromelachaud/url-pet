@@ -21,6 +21,10 @@ const path = require('path')
 server.use(express.static(path.join(__dirname, '../build')))
 
 // Routes
+server.get(['/login', '/admin'], (req, res) => {
+  res.sendFile(path.join(__dirname, '../build', 'index.html'))
+})
+
 const userRoutes = require('./routes/user')
 server.use('/user', userRoutes)
 
