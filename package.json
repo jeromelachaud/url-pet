@@ -8,11 +8,13 @@
   "scripts": {
     "start:server": "NODE_ENV=production node start",
     "start:server:dev": "NODE_ENV=development DEBUG=express:* nodemon start",
+    "start:server:test": "NODE_ENV=test DEBUG=express:* node start",
     "test:server": "jest  --runInBand ./api",
     "start:client": "react-scripts start",
     "build:client": "react-scripts build",
-    "test:front": "react-scripts test",
-    "heroku-postbuild": "yarn build:client"
+    "test:client": "react-scripts test --env=jsdom",
+    "heroku-postbuild": "yarn build:client",
+    "cypress:run": "yarn run cypress run"
   },
   "dependencies": {
     "axios": "^0.18.1",
@@ -32,17 +34,20 @@
     "react-scripts": "1.1.4",
     "sequelize": "^4.31.2",
     "sequelize-cli": "^5.5.1",
-    "sqlite3": "^4.1.1"
+    "sqlite3": "^4.1.1",
+    "wait-on": "^4.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
+    "cypress": "^4.0.1",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^6.8.0",
     "eslint-config-node": "^4.0.0",
     "eslint-config-prettier": "^6.10.0",
     "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-cypress": "^2.9.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jest": "^21.17.0",
     "eslint-plugin-json": "^1.2.0",
@@ -62,7 +67,6 @@
   },
   "engines": {
     "node": "10.18.1",
-    "npm": "6.13.4",
-    "yarn": "1.22.0"
+    "npm": "6.13.4"
   }
 }

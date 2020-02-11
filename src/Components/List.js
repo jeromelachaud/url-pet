@@ -1,23 +1,18 @@
-import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import React, { Component } from 'react'
 import LinkItem from './LinkItem'
 import './List.css'
 
 export default class List extends Component {
   render() {
-    const {
-      urls,
-    } = this.props
+    const { urls } = this.props
     const listElement = urls.map((link, i) => (
-      <LinkItem
-        key={i}
-        link={link}>
-      </LinkItem>
+      <LinkItem key={i} link={link}></LinkItem>
     ))
 
     return (
       <div className="List">
-        <table>
+        <table id="list-table">
           <tbody>
             <tr>
               <th>Original URL</th>

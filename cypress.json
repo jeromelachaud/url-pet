@@ -1,0 +1,5 @@
+{
+  "nodeVersion": "system",
+  "baseUrl": "http://localhost:8081",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiamVyb21lIiwicGFzcyI6ImFkbWluIiwiaWF0IjoxNTgxMDA3OTMzfQ.sSv7Xp5DwkDHdOTnkG3ROLtCdAh7xi0vHtDFf7ZgMe8"
+}

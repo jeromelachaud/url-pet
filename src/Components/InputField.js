@@ -1,13 +1,11 @@
-import React from 'react'
-import { Label } from './Label'
 import PropTypes from 'prop-types'
+import React from 'react'
 import './InputField.css'
+import { Label } from './Label'
 
 export const InputField = props => (
   <div>
-    <Label
-      htmlFor={props.htmlFor}
-      text={props.labelText}/>
+    <Label id={props.id} htmlFor={props.htmlFor} text={props.labelText} />
 
     <input
       required
@@ -17,10 +15,9 @@ export const InputField = props => (
       id={props.id}
       className="input-field"
       placeholder={props.placeholder}
-      onChange={props.onChange}>
-    </input>
+      onChange={props.onChange}
+    ></input>
   </div>
-
 )
 
 InputField.propTypes = {

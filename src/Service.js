@@ -18,8 +18,8 @@ export const Service = {
       .catch(error => error.response.data)
   },
   list(payload) {
-    const { isAuth, token } = payload
-    return isAuth
+    const { token } = payload
+    return token
       ? instance({
           headers: { Authorization: `Bearer ${token}` },
           url: '/url/list',

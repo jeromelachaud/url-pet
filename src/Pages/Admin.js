@@ -19,7 +19,6 @@ export default class Admin extends Component {
 
   fetchData() {
     Service.list({
-      isAuth: this.props.location.state,
       token: this.getTokenFromLocalStorage(),
     }).then(response => {
       this.setState({
@@ -29,12 +28,10 @@ export default class Admin extends Component {
     })
   }
 
-  componentWillMount() {
-    const { location, history } = this.props
-
-    location.state && this.getTokenFromLocalStorage()
-      ? this.fetchData()
-      : history.push('/login')
+  // eslint-disable-next-line camelcase
+  UNSAFE_componentWillMount() {
+    const { history } = this.props
+    this.getTokenFromLocalStorage() ? this.fetchData() : history.push('/login')
   }
 
   render() {
@@ -52,5 +49,6 @@ Admin.propTypes = {
   }),
   history: PropTypes.shape({
     history: PropTypes.func,
+    push: PropTypes.func,
   }),
 }

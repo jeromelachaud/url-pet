@@ -67,12 +67,12 @@ class LoginForm extends Component {
 
     return (
       <div>
-        <form onSubmit={this.onSubmit}>
+        <form onSubmit={this.onSubmit} id="login-form">
           <InputField
             id="username"
             htmlFor="username"
             type="text"
-            placeholder="login"
+            placeholder="username"
             labelText="Enter your username"
             ariaLabel="Enter your username"
             onChange={this.onChangeLogin}

@@ -1,8 +1,6 @@
 import React from 'react'
-import SubmitForm from '../Components/SubmitForm'
+import MinifierForm from '../Components/MinifierForm'
 
 export const Home = () => {
-  return (
-    <SubmitForm />
-  )
+  return <MinifierForm />
 }

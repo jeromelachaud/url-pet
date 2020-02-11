@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import { InputField } from './InputField'
+import { Service } from '../Service'
 import { Button } from './Button'
+import { InputField } from './InputField'
 import { Loader } from './Loader'
 import ShortUrl from './ShortUrl'
-import { Service } from '../Service'
 
-export default class SubmitForm extends Component {
+export default class MinifierForm extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -49,16 +49,11 @@ export default class SubmitForm extends Component {
       responseElement = null
     } else {
       responseElement = (
-        <div>
-          <ShortUrl
-            message={this.state.message}
-            link={this.state.shortUrl}/>
-        </div>
+        <ShortUrl message={this.state.message} link={this.state.shortUrl} />
       )
     }
     return (
-      <form
-        onSubmit={this.onSubmit}>
+      <form id="minifier-form" onSubmit={this.onSubmit}>
         <InputField
           type="url"
           id="url"
@@ -66,9 +61,9 @@ export default class SubmitForm extends Component {
           labelText="Enter the URL to minify"
           placeholder="URL"
           ariaLabel="Enter the URL to minify"
-          onChange={this.onChangeQuery}/>
-        <Button
-          text="Minify this ☝️"/>
+          onChange={this.onChangeQuery}
+        />
+        <Button text="Minify this☝️" />
         {responseElement}
       </form>
     )
