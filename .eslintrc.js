@@ -8,8 +8,7 @@ module.exports = {
     browser: true,
   },
   // https://github.com/feross/standard/blob/master/RULES.md#javascript-standard-style
-  extends: ['standard', 'plugin:react/recommended'],
-  plugins: ['react', 'jest'],
+  extends: ['standard', 'prettier', 'plugin:react/recommended'],
   parserOptions: {
     sourceType: 'module',
     ecmaFeatures: {
