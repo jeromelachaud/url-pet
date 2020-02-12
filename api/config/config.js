@@ -38,7 +38,6 @@ module.exports = {
     dialect: 'postgres',
     operatorsAliases: false,
     use_env_variable: 'DATABASE_URL',
-    dialect: 'postgres',
     ssl: true,
     dialectOptions: {
       ssl: {
@@ -46,7 +45,6 @@ module.exports = {
       },
     },
     logging: true,
-    operatorsAliases: false,
     options: {
       use_env_variable: 'DATABASE_URL',
       dialect: 'postgres',
