@@ -12,9 +12,9 @@
     "test:server": "jest  --runInBand ./api",
     "start:client": "react-scripts start",
     "build:client": "react-scripts build",
-    "test:client": "react-scripts test --env=jsdom",
-    "heroku-postbuild": "yarn build:client",
-    "cypress:run": "yarn run cypress run"
+    "test:client:snapshot": "react-scripts test --env=jsdom",
+    "test:client:functional": "NODE_ENV=development sequelize db:drop && sequelize db:create && sequelize db:migrate && sequelize db:seed:all && cypress run",
+    "heroku-postbuild": "yarn build:client"
   },
   "dependencies": {
     "axios": "^0.18.1",
@@ -40,7 +40,7 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
-    "cypress": "^4.0.1",
+    "cypress": "^4.1.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^6.8.0",
