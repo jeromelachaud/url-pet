@@ -2,9 +2,9 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import './Button.css'
 
-export const Button = props => (
+export const Button = ({ text }) => (
   <button id="button" className="button" type="submit">
-    {props.text}
+    {text}
   </button>
 )
 

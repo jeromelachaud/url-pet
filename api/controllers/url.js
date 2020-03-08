@@ -32,7 +32,7 @@ module.exports = {
         return res.status(404).send({ message: language.shortUrlDoesNotExist })
       }
       await Urls.destroy({ where: { hash } })
-      res.status(200).send({ message: language.shortUrlDestroyed })
+      res.sendStatus(200)
     } catch (err) {
       console.log('TCL: delete -> err', err)
       res.status(500).send({ message: language.genericError })

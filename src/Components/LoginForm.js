@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import { Redirect } from 'react-router'
 import { Button } from '../Components/Button'
 import { InputField } from '../Components/InputField'
@@ -6,100 +6,77 @@ import { Loader } from '../Components/Loader'
 import { Service } from '../Service'
 import './LoginForm.css'
 
-class LoginForm extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      isLoading: false,
-      name: '',
-      pass: '',
-      message: '',
-      isAuth: false,
-    }
+export const LoginForm = () => {
+  const [isLoading, setIsLoading] = useState(false)
+  const [isAuth, setIsAuth] = useState(false)
+  const [name, setName] = useState('')
+  const [pass, setPass] = useState('')
+  const [message, setMessage] = useState('')
 
-    this.onChangeLogin = this.onChangeLogin.bind(this)
-    this.onChangePassword = this.onChangePassword.bind(this)
-    this.onSubmit = this.onSubmit.bind(this)
+  const onChangeLogin = e => {
+    setName(e.target.value)
   }
 
-  onChangeLogin(event) {
-    this.setState({
-      name: event.target.value,
-    })
+  const onChangePassword = e => {
+    setPass(e.target.value)
   }
 
-  onChangePassword(event) {
-    this.setState({
-      pass: event.target.value,
-    })
-  }
-
-  onSubmit(e) {
+  const onSubmit = e => {
     e.preventDefault()
-    this.setState({
-      isLoading: true,
-    })
+    setIsLoading(true)
     Service.login({
-      name: this.state.name,
-      pass: this.state.pass,
+      name,
+      pass,
     }).then(res => {
       const token = res.data
       localStorage.setItem('token', token)
-      this.setState({
-        isLoading: false,
-        isAuth: res.status === 200,
-        message: res.message,
-      })
+      setIsLoading(true)
+      setIsAuth(res.status === 200)
+      setMessage(res.message)
     })
   }
 
-  render() {
-    let messageElement
-    if (this.state.isLoading) {
-      messageElement = <Loader />
-    } else if (this.state.message === '') {
-      messageElement = null
-    } else {
-      messageElement = (
-        <div className="LoginForm__message">{this.state.message}</div>
-      )
-    }
-
-    return (
-      <div>
-        <form onSubmit={this.onSubmit} id="login-form">
-          <InputField
-            id="username"
-            htmlFor="username"
-            type="text"
-            placeholder="username"
-            labelText="Enter your username"
-            ariaLabel="Enter your username"
-            onChange={this.onChangeLogin}
-          />
-          <InputField
-            id="password"
-            htmlFor="password"
-            type="password"
-            placeholder="password"
-            labelText="Enter your password"
-            ariaLabel="Enter your password"
-            onChange={this.onChangePassword}
-          />
-          <Button text="Let me in 🔓" />
-          {messageElement}
-        </form>
-        {this.state.isAuth && (
-          <Redirect
-            to={{
-              pathname: '/admin',
-              state: this.state.isAuth,
-            }}
-          />
-        )}
-      </div>
-    )
+  let messageElement
+  if (isLoading) {
+    messageElement = <Loader />
+  } else if (message === '') {
+    messageElement = null
+  } else {
+    messageElement = <div className="LoginForm__message">{message}</div>
   }
-}
 
-export default LoginForm
+  return (
+    <div>
+      <form onSubmit={onSubmit} id="login-form">
+        <InputField
+          id="username"
+          htmlFor="username"
+          type="text"
+          placeholder="username"
+          labelText="Enter your username"
+          ariaLabel="Enter your username"
+          onChange={onChangeLogin}
+        />
+        <InputField
+          id="password"
+          htmlFor="password"
+          type="password"
+          placeholder="password"
+          labelText="Enter your password"
+          ariaLabel="Enter your password"
+          onChange={onChangePassword}
+        />
+        <Button text="Let me in 🔓" />
+        {messageElement}
+      </form>
+      {isAuth && (
+        <Redirect
+          to={{
+            pathname: '/admin',
+            state: isAuth,
+          }}
+        />
+      )}
+    </div>
+  )
+}

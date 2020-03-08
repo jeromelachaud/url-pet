@@ -1,73 +1,54 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import { Service } from '../Service'
 import { Button } from './Button'
 import { InputField } from './InputField'
 import { Loader } from './Loader'
-import ShortUrl from './ShortUrl'
+import { ShortUrl } from './ShortUrl'
 
-export default class MinifierForm extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      isLoading: false,
-      shortUrl: '',
-      message: '',
-      query: '',
-    }
+export const MinifierForm = () => {
+  const [isLoading, setLoading] = useState(false)
+  const [shortUrl, setShortUrl] = useState('')
+  const [message, setMessage] = useState('')
+  const [query, setQuery] = useState('')
 
-    this.onChangeQuery = this.onChangeQuery.bind(this)
-    this.onSubmit = this.onSubmit.bind(this)
-  }
-
-  onChangeQuery(event) {
-    this.setState({
-      query: event.target.value,
-    })
-  }
-
-  onSubmit(e) {
+  const onSubmit = e => {
     e.preventDefault()
-    this.setState({
-      isLoading: true,
-    })
+    setLoading(true)
+
     Service.minify({
-      payload: this.state.query,
+      payload: query,
     }).then(res => {
-      this.setState({
-        isLoading: false,
-        shortUrl: res.shortUrl,
-        message: res.message,
-      })
+      setLoading(false)
+      setShortUrl(res.shortUrl)
+      setMessage(res.message)
     })
   }
 
-  render() {
-    let responseElement
-    if (this.state.isLoading) {
-      responseElement = <Loader />
-    } else if (this.state.shortUrl === '') {
-      responseElement = null
-    } else {
-      responseElement = (
-        <div>
-          <ShortUrl message={this.state.message} link={this.state.shortUrl} />
-        </div>
-      )
-    }
-    return (
-      <form id="minifier-form" onSubmit={this.onSubmit}>
-        <InputField
-          type="url"
-          id="url"
-          htmlFor="url"
-          labelText={false}
-          placeholder="URL"
-          ariaLabel="Enter the URL to minify"
-          onChange={this.onChangeQuery}
-        />
-        <Button text="Minify this ☝️" />
-        {responseElement}
-      </form>
+  let responseElement
+  if (isLoading) {
+    responseElement = <Loader />
+  } else if (shortUrl === '') {
+    responseElement = null
+  } else {
+    responseElement = (
+      <div>
+        <ShortUrl message={message} link={shortUrl} />
+      </div>
     )
   }
+  return (
+    <form id="minifier-form" onSubmit={onSubmit}>
+      <InputField
+        type="url"
+        id="url"
+        htmlFor="url"
+        labelText={false}
+        placeholder="URL"
+        ariaLabel="Enter the URL to minify"
+        onChange={e => setQuery(e.target.value)}
+      />
+      <Button text="Minify this ☝️" />
+      {responseElement}
+    </form>
+  )
 }

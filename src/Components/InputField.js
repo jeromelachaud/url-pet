@@ -3,19 +3,27 @@ import React from 'react'
 import './InputField.css'
 import { Label } from './Label'
 
-export const InputField = props => (
+export const InputField = ({
+  id,
+  htmlFor,
+  labelText,
+  type,
+  ariaLabel,
+  placeholder,
+  onChange,
+}) => (
   <div>
-    <Label id={props.id} htmlFor={props.htmlFor} text={props.labelText} />
+    <Label id={id} htmlFor={htmlFor} text={labelText} />
 
     <input
       required
       size="80"
-      type={props.type}
-      aria-label={props.ariaLabel}
-      id={props.id}
+      type={type}
+      aria-label={ariaLabel}
+      id={id}
       className="input-field"
-      placeholder={props.placeholder}
-      onChange={props.onChange}
+      placeholder={placeholder}
+      onChange={onChange}
     />
   </div>
 )

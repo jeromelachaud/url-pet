@@ -1,46 +1,31 @@
 import PropTypes from 'prop-types'
-import React, { Component } from 'react'
-import List from '../Components/List'
+import React, { useEffect, useState } from 'react'
+import { List } from '../Components/List'
 import { Loader } from '../Components/Loader'
 import { Service } from '../Service'
 
-export default class Admin extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      isLoading: true,
-      urls: [],
-    }
-  }
+export const Admin = ({ history }) => {
+  const [isLoading, setLoading] = useState(true)
+  const [urls, setUrls] = useState([])
 
-  getTokenFromLocalStorage() {
+  const getTokenFromLocalStorage = () => {
     return localStorage.getItem('token')
   }
 
-  fetchData() {
+  const fetchData = () => {
     Service.list({
-      token: this.getTokenFromLocalStorage(),
+      token: getTokenFromLocalStorage(),
     }).then(response => {
-      this.setState({
-        isLoading: false,
-        urls: response,
-      })
+      setLoading(false)
+      setUrls(response)
     })
   }
 
-  // eslint-disable-next-line camelcase
-  UNSAFE_componentWillMount() {
-    const { history } = this.props
-    this.getTokenFromLocalStorage() ? this.fetchData() : history.push('/login')
-  }
+  useEffect(() => {
+    getTokenFromLocalStorage() ? fetchData() : history.push('/login')
+  }, [])
 
-  render() {
-    if (this.state.isLoading) {
-      return <Loader />
-    }
-
-    return <List urls={this.state.urls} />
-  }
+  return isLoading ? <Loader /> : <List urls={urls} />
 }
 
 Admin.propTypes = {

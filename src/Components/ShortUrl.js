@@ -1,29 +1,21 @@
-import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import React from 'react'
 import './ShortUrl.css'
 
-export default class ShortUrl extends Component {
-  render() {
-    const {
-      link,
-      message,
-    } = this.props
-    return (
-      <div
-        className="short-url">
-        <div
-          className="short-url__message">
-          {message}
-        </div>
-        <a
-          className="short-url__link"
-          href={link}
-          target="_blank">
-          {link}
-        </a>
-      </div>
-    )
-  }
+export const ShortUrl = ({ link, message }) => {
+  return (
+    <div className="short-url">
+      <div className="short-url__message">{message}</div>
+      <a
+        className="short-url__link"
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {link}
+      </a>
+    </div>
+  )
 }
 
 ShortUrl.propTypes = {
