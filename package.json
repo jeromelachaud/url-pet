@@ -47,7 +47,7 @@
     "eslint-config-node": "4.0.0",
     "eslint-config-prettier": "6.10.0",
     "eslint-config-standard": "11.0.0",
-    "eslint-plugin-cypress": "2.9.0",
+    "eslint-plugin-cypress": "2.10.3",
     "eslint-plugin-import": "2.20.0",
     "eslint-plugin-jest": "21.27.2",
     "eslint-plugin-json": "1.4.0",
