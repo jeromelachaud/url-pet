@@ -53,7 +53,7 @@
     "eslint-plugin-json": "1.4.0",
     "eslint-plugin-node": "11.0.0",
     "eslint-plugin-prettier": "3.1.2",
-    "eslint-plugin-promise": "3.8.0",
+    "eslint-plugin-promise": "4.2.1",
     "eslint-plugin-react": "7.19.0",
     "eslint-plugin-standard": "3.1.0",
     "jest-enzyme": "6.1.2",
