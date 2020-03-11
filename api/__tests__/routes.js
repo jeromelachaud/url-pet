@@ -71,11 +71,11 @@ describe('Test the url/delete/ path', () => {
       .expect(200)
   })
 
-  it('should response to an authorized but empty DELETE request with a 404', () => {
+  it('should response to an authorized but empty DELETE request with a 500', () => {
     return request(app)
       .delete('/url/delete')
       .set('Authorization', `Bearer ${process.env.TOKEN_TEST}`)
-      .expect(404)
+      .expect(500)
   })
 })
 
