@@ -44,7 +44,7 @@ export const LinkItem = ({ link }) => {
               {minifiedUrl}
             </a>
           </td>
-          <td className="center">{visit}</td>
+          <td className="center visit">{visit}</td>
           <td className="center">{DeleteLinkItemElement}</td>
         </tr>
       ))

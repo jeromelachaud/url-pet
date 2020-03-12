@@ -9,12 +9,14 @@
     "start:server": "NODE_ENV=production node start",
     "start:server:dev": "NODE_ENV=development DEBUG=express:* nodemon start",
     "start:server:test": "NODE_ENV=test DEBUG=express:* node start",
-    "test:server": "jest  --runInBand ./api",
+    "test:server": "jest  --runInBand ./api && git checkout -- api/url-minifier.sqlite3",
     "start:client": "react-scripts start",
     "build:client": "react-scripts build",
     "test:client:snapshot": "react-scripts test --env=jsdom",
     "test:client:functional": "NODE_ENV=development sequelize db:drop && sequelize db:create && sequelize db:migrate && sequelize db:seed:all && cypress run",
-    "heroku-postbuild": "yarn build:client"
+    "heroku-postbuild": "yarn build:client",
+    "cy:open": "cypress open",
+    "test:e2e": "start-server-and-test start:server:test http://localhost:8081 cy:open && git checkout -- api/url-minifier.sqlite3"
   },
   "dependencies": {
     "axios": "0.19.2",
@@ -61,6 +63,7 @@
     "react-router-dom": "4.3.1",
     "react-test-renderer": "16.13.0",
     "sequelize-auto": "0.4.29",
+    "start-server-and-test": "^1.10.9",
     "superagent": "3.8.3",
     "supertest": "3.4.2",
     "swagger-ui-express": "3.0.10"

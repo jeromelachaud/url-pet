@@ -4,6 +4,28 @@ context('Home Page', () => {
   })
 
   describe('Check page elements', () => {
+    it('should have a theme switcher', () => {
+      cy.get('#theme-switcher')
+        .find('span')
+        .should('have.text', '🌓')
+
+      cy.get('#theme-switcher')
+        .find('span')
+        .click()
+        .should(() => {
+          expect(localStorage.getItem('theme')).to.eq('dark')
+        })
+      cy.get('body').should('have.class', 'dark')
+
+      cy.get('#theme-switcher')
+        .find('span')
+        .click()
+        .should(() => {
+          expect(localStorage.getItem('theme')).to.eq('')
+        })
+      cy.get('body').should('not.have.class', 'dark')
+    })
+
     it('should have a header', () => {
       cy.get('.Header')
         .find('h1')

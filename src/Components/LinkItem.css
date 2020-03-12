@@ -18,3 +18,7 @@ a:hover {
 .center {
   text-align: center;
 }
+
+.visit {
+  color: var(--third-color);
+}

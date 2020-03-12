@@ -3,6 +3,7 @@ import { Service } from '../Service'
 import { Button } from './Button'
 import { InputField } from './InputField'
 import { Loader } from './Loader'
+import './MinifierForm.css'
 import { ShortUrl } from './ShortUrl'
 
 export const MinifierForm = () => {
@@ -30,11 +31,7 @@ export const MinifierForm = () => {
   } else if (shortUrl === '') {
     responseElement = null
   } else {
-    responseElement = (
-      <div>
-        <ShortUrl message={message} link={shortUrl} />
-      </div>
-    )
+    responseElement = <ShortUrl message={message} link={shortUrl} />
   }
   return (
     <form id="minifier-form" onSubmit={onSubmit}>
@@ -48,7 +45,7 @@ export const MinifierForm = () => {
         onChange={e => setQuery(e.target.value)}
       />
       <Button text="Minify this ☝️" />
-      {responseElement}
+      <div className="responseElementContainer">{responseElement}</div>
     </form>
   )
 }

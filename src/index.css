@@ -1,7 +1,15 @@
 :root {
-  --primary-color: 8, 28, 36;
-  --secondary-color: rgba(var(--primary-color), 0.75);
-  --third-color: green;
+  --background-body: #fefcfb;
+  --primary-color: #001f54;
+  --secondary-color: #166088;
+  --third-color: #001f54;
+}
+
+.dark {
+  --background-body: #001f54;
+  --primary-color: #4a6fa5;
+  --secondary-color: #859ab9;
+  --third-color: #fefcfb;
 }
 
 html {
@@ -20,6 +28,7 @@ body {
   place-items: center center;
   font-size: 62.5%;
   font-family: sans-serif;
+  background-color: var(--background-body);
 }
 
 label,
