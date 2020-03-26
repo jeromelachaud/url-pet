@@ -12,18 +12,17 @@ export const Admin = ({ history }) => {
     return localStorage.getItem('token')
   }
 
-  const fetchData = () => {
-    Service.list({
-      token: getTokenFromLocalStorage(),
-    }).then(response => {
-      setLoading(false)
-      setUrls(response)
-    })
-  }
-
   useEffect(() => {
+    const fetchData = () => {
+      Service.list({
+        token: getTokenFromLocalStorage(),
+      }).then(response => {
+        setLoading(false)
+        setUrls(response)
+      })
+    };
     getTokenFromLocalStorage() ? fetchData() : history.push('/login')
-  }, [])
+  }, [history])
 
   return isLoading ? <Loader /> : <List urls={urls} />
 }
