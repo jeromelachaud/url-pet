@@ -16,7 +16,8 @@
     "test:client:functional": "NODE_ENV=development sequelize db:drop && sequelize db:create && sequelize db:migrate && sequelize db:seed:all && cypress run",
     "heroku-postbuild": "yarn build:client",
     "cy:open": "cypress open",
-    "test:e2e": "start-server-and-test start:server:test http://localhost:8081 cy:open && git checkout -- api/url-minifier.sqlite3"
+    "cy:run": "cypress run",
+    "test:e2e": "yarn build:client && start-server-and-test start:server:test http://localhost:8081 cy:run && git checkout -- api/url-minifier.sqlite3"
   },
   "dependencies": {
     "axios": "0.19.2",
