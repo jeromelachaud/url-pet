@@ -17,7 +17,7 @@
     "heroku-postbuild": "yarn build:client",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
-    "test:e2e": "start-server-and-test start:server:test http://localhost:8081 cy:run && git checkout -- api/url-minifier.sqlite3"
+    "test:e2e": "yarn build:client && start-server-and-test start:server:test http://localhost:8081 cy:run && git checkout -- api/url-minifier.sqlite3"
   },
   "dependencies": {
     "axios": "0.19.2",
