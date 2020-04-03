@@ -1,24 +1,45 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
+import useSound from 'use-sound'
+import switchOffSound from './sounds/switch-off.mp3'
+import switchOnSound from './sounds/switch-on.mp3'
 import './ThemeSwitcher.css'
 
 export const ThemeSwitcher = () => {
-  useEffect(() => {
-    if (localStorage.getItem('theme') === 'dark') {
-      document.body.classList.toggle(localStorage.getItem('theme'))
-    }
+  function useDarkMode() {
+    const preferDarkQuery = '(prefers-color-scheme: dark)'
+    const [mode, setMode] = useState(
+      () =>
+        window.localStorage.getItem('colorMode') ||
+        (window.matchMedia(preferDarkQuery).matches ? 'dark' : 'light')
+    )
+    useEffect(() => {
+      const mediaQuery = window.matchMedia(preferDarkQuery)
+      const handleChange = () => setMode(mediaQuery.matches ? 'dark' : 'light')
+      mediaQuery.addListener(handleChange)
+      return () => mediaQuery.removeListener(handleChange)
+    }, [])
+    useEffect(() => {
+      document.documentElement.setAttribute('data-theme', mode)
+      window.localStorage.setItem('colorMode', mode)
+    }, [mode])
+    return [mode, setMode]
+  }
 
-    const themeSwitcher = document.getElementById('theme-switcher')
+  const [switchOn] = useSound(switchOnSound, { volume: 0.25 })
+  const [switchOff] = useSound(switchOffSound, { volume: 0.25 })
 
-    themeSwitcher.addEventListener('click', () => {
-      document.body.classList.toggle('dark')
-      localStorage.setItem('theme', document.body.classList)
-    })
-  })
+  const [mode, setMode] = useDarkMode()
 
   return (
-    <button id="theme-switcher">
+    <button
+      className="theme-switcher"
+      onClick={() => setMode(mode === 'dark' ? 'light' : 'dark')}
+      onMouseUp={() => {
+        mode === 'dark' ? switchOff() : switchOn()
+      }}
+    >
       <span role="img" aria-label="theme-switcher">
-        🌓
+        {mode === 'dark' ? '🌚' : '🌞'}
       </span>
     </button>
   )
