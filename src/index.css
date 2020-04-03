@@ -1,24 +1,31 @@
-:root {
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html[data-theme='light'] {
+  box-sizing: border-box;
   --background-body: #fefcfb;
   --primary-color: #001f54;
   --secondary-color: #166088;
   --third-color: #001f54;
 }
-
-.dark {
+html,
+html[data-theme='dark'] {
   --background-body: #001f54;
   --primary-color: #4a6fa5;
   --secondary-color: #859ab9;
   --third-color: #fefcfb;
 }
 
-html {
-  box-sizing: border-box;
-}
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
+@media (prefers-color-scheme: dark) {
+  html {
+    --background-body: #001f54;
+    --primary-color: #4a6fa5;
+    --secondary-color: #859ab9;
+    --third-color: #fefcfb;
+  }
 }
 
 body {
@@ -35,7 +42,11 @@ label,
 input,
 button,
 select {
+  color: green;
   color: var(--primary-color);
   font-size: 1rem;
   margin: 0 0 1rem 0;
+}
+button:focus {
+  outline: none;
 }
