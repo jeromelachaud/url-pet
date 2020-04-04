@@ -8,7 +8,7 @@
   "scripts": {
     "start:server": "NODE_ENV=production node start",
     "start:server:dev": "NODE_ENV=development DEBUG=express:* nodemon start",
-    "start:server:test": "NODE_ENV=test DEBUG=express:* node start",
+    "start:server:test": "NODE_ENV=test node start",
     "test:server": "jest  --runInBand ./api && git checkout -- api/url-minifier.sqlite3",
     "start:client": "react-scripts start",
     "build:client": "react-scripts build",

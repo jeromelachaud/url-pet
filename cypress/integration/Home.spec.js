@@ -5,9 +5,16 @@ context('Home Page', () => {
 
   describe('Check page elements', () => {
     it('should have a theme switcher', () => {
+      cy.get('#theme-switcher').find('span').should('have.text', '🌚')
+
       cy.get('#theme-switcher')
         .find('span')
-        .should('have.text', '🌓')
+        .click()
+        .should(() => {
+          expect(localStorage.getItem('theme')).to.eq('light')
+        })
+        .should('have.text', '🌞')
+      cy.get('html').should('have.attr', 'data-theme', 'light')
 
       cy.get('#theme-switcher')
         .find('span')
@@ -15,21 +22,12 @@ context('Home Page', () => {
         .should(() => {
           expect(localStorage.getItem('theme')).to.eq('dark')
         })
-      cy.get('body').should('have.class', 'dark')
-
-      cy.get('#theme-switcher')
-        .find('span')
-        .click()
-        .should(() => {
-          expect(localStorage.getItem('theme')).to.eq('')
-        })
-      cy.get('body').should('not.have.class', 'dark')
+        .should('have.text', '🌚')
+      cy.get('html').should('have.attr', 'data-theme', 'dark')
     })
 
     it('should have a header', () => {
-      cy.get('.Header')
-        .find('h1')
-        .should('have.text', 'url.pet')
+      cy.get('.Header').find('h1').should('have.text', 'url.pet')
     })
 
     it('should have a form', () => {
