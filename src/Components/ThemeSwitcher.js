@@ -9,7 +9,7 @@ export const ThemeSwitcher = () => {
     const preferDarkQuery = '(prefers-color-scheme: dark)'
     const [mode, setMode] = useState(
       () =>
-        window.localStorage.getItem('colorMode') ||
+        window.localStorage.getItem('theme') ||
         (window.matchMedia(preferDarkQuery).matches ? 'dark' : 'light')
     )
     useEffect(() => {
@@ -20,7 +20,7 @@ export const ThemeSwitcher = () => {
     }, [])
     useEffect(() => {
       document.documentElement.setAttribute('data-theme', mode)
-      window.localStorage.setItem('colorMode', mode)
+      window.localStorage.setItem('theme', mode)
     }, [mode])
     return [mode, setMode]
   }
@@ -32,6 +32,7 @@ export const ThemeSwitcher = () => {
 
   return (
     <button
+      id="theme-switcher"
       className="theme-switcher"
       onClick={() => setMode(mode === 'dark' ? 'light' : 'dark')}
       onMouseUp={() => {
