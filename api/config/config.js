@@ -6,7 +6,7 @@ const Sequelize = require('sequelize')
 const SERVER_HOST = 'localhost'
 const SERVER_PORT = process.env.PORT || 8081
 const SERVER_PROTOCOL = 'http' // Note: I did not test https yet, so you might need more adjustments to make it work
-let ROOT_URL = `${SERVER_PROTOCOL}://${SERVER_HOST}:${SERVER_PORT}`
+const ROOT_URL = `${SERVER_PROTOCOL}://${SERVER_HOST}:${SERVER_PORT}`
 const DB_USERNAME = 'admin'
 const DB_PASSWORD = 'password'
 
@@ -17,11 +17,11 @@ module.exports = {
     username: DB_USERNAME,
     password: DB_PASSWORD,
     dialect: 'postgres',
-    operatorsAliases: false,
+    operatorsAliases: '0',
     options: {
       protocol: 'postgres',
       dialect: 'postgres',
-      operatorsAliases: false,
+      operatorsAliases: '0',
     },
   },
   test: {
@@ -36,7 +36,7 @@ module.exports = {
   production: {
     rootUrl: `https://url.pet`,
     dialect: 'postgres',
-    operatorsAliases: false,
+    operatorsAliases: '0',
     use_env_variable: 'DATABASE_URL',
     ssl: true,
     dialectOptions: {
@@ -57,7 +57,7 @@ module.exports = {
       },
       logging: true,
       benchmark: true,
-      operatorsAliases: false,
+      operatorsAliases: '0',
     },
   },
   server_port: SERVER_PORT,
