@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+:root {
+  --transition_time: 0.2s;
+  --transition_effect: linear;
+}
+
 html[data-theme='light'] {
   box-sizing: border-box;
   --background-body: #fefcfb;
@@ -36,6 +41,8 @@ body {
   font-size: 62.5%;
   font-family: sans-serif;
   background-color: var(--background-body);
+  transition: var(--transition_effect) background-color var(--transition_time),
+    var(--transition_effect) color var(--transition_time);
 }
 
 label,
