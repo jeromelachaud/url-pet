@@ -12382,10 +12382,10 @@ send@0.17.1:
     range-parser "~1.2.1"
     statuses "~1.5.0"
 
-sequelize-auto@0.5.1:
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/sequelize-auto/-/sequelize-auto-0.5.1.tgz#18a271b808a3eafb6fd685b387db241d9108a59d"
-  integrity sha512-zh1aS/LSS7GgmJFGsg0VBaz4oEmNGytMuB5u0Mi73uxUhwhHLNliW0wzxvBI2I3x8gZkAJ8VI/Ddd9lCSsG7Dg==
+sequelize-auto@0.5.2:
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/sequelize-auto/-/sequelize-auto-0.5.2.tgz#b4fd5d999e7fda58bdad7ca48453f880031f4fa3"
+  integrity sha512-29LuF5wtGhweZ8jN5SyFLcUXz3eonqBE8ji9QsTXX0b9yQBbGQolIXDseOcbuORPIDzEIzf4EyUA4edp4WQfBA==
   dependencies:
     async "^3.2.0"
     eslint "^7.2.0"
