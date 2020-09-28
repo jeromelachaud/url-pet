@@ -9312,10 +9312,10 @@ moo@^0.5.0:
   resolved "https://registry.yarnpkg.com/moo/-/moo-0.5.1.tgz#7aae7f384b9b09f620b6abf6f74ebbcd1b65dbc4"
   integrity sha512-I1mnb5xn4fO80BH9BLcF0yLypy2UKl+Cb01Fu0hJRkJjlCRtxZMWkTdAtDd5ZqCOxtCkhmRwyI57vWT+1iZ67w==
 
-morgan-body@2.5.1:
-  version "2.5.1"
-  resolved "https://registry.yarnpkg.com/morgan-body/-/morgan-body-2.5.1.tgz#21c6fad7504c7620ac398343f8792796ebc6cd91"
-  integrity sha512-jB4Ic5I1ZnC/XOqKX90lwIBeN9pl6l5v34WBt3WPhMS4Eeb79mlxOZJZbA8cJPh+edZtJ0dq3OC0zAgRGhwsIg==
+morgan-body@2.5.2:
+  version "2.5.2"
+  resolved "https://registry.yarnpkg.com/morgan-body/-/morgan-body-2.5.2.tgz#9c58d2b6c614bec7b93724101cece55f5b15ac98"
+  integrity sha512-c0wxnTc9kI55NpBMsh/clG02DySbn6HA/eLaxXSpbYChQDJV2LZJcu+24SCJvrqQndDrvgUfL96vS+x9LRlo+Q==
   dependencies:
     moment-timezone "^0.5.13"
     on-finished "^2.3.0"
