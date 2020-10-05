@@ -12441,10 +12441,10 @@ send@0.17.1:
     range-parser "~1.2.1"
     statuses "~1.5.0"
 
-sequelize-auto@0.6.2:
-  version "0.6.2"
-  resolved "https://registry.yarnpkg.com/sequelize-auto/-/sequelize-auto-0.6.2.tgz#9265bf12b5f7cdee3ca385aea6a585d9c97d72e4"
-  integrity sha512-K2E6I+K1gHNle9YHcytAo8vUhZgS8CNgMgbY5XM+weHcSghjy2M3/iaADN7PBoJOZ8LrBiXumj5sdswjjSLCDg==
+sequelize-auto@0.6.3:
+  version "0.6.3"
+  resolved "https://registry.yarnpkg.com/sequelize-auto/-/sequelize-auto-0.6.3.tgz#0339604e62e027e061913bf2d91913cc4e134f01"
+  integrity sha512-cz7N+4TlFvvGyeWCYcS5+j2QoWAYv8mksu5nYLlBaohIXXSjwdVa4uUSySBrnh6tXISLe0a0NBvU9tG7fstxVg==
   dependencies:
     async "^3.2.0"
     graceful-fs-extra "^2.0.0"
