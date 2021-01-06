@@ -30,7 +30,7 @@
     "jsonwebtoken": "8.5.1",
     "morgan": "1.10.0",
     "morgan-body": "2.6.4",
-    "nodemon": "2.0.6",
+    "nodemon": "2.0.7",
     "pg": "7.18.2",
     "react": "16.14.0",
     "react-dom": "16.14.0",
