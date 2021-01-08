@@ -38,7 +38,7 @@
     "sequelize": "5.22.3",
     "sequelize-cli": "6.2.0",
     "sqlite3": "5.0.1",
-    "use-sound": "1.0.2",
+    "use-sound": "2.0.1",
     "wait-on": "5.2.1"
   },
   "devDependencies": {
