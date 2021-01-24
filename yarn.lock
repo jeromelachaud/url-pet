@@ -12505,10 +12505,10 @@ send@0.17.1:
     range-parser "~1.2.1"
     statuses "~1.5.0"
 
-sequelize-auto@0.7.7:
-  version "0.7.7"
-  resolved "https://registry.yarnpkg.com/sequelize-auto/-/sequelize-auto-0.7.7.tgz#2741ca7dcaf743c1c9d32c3982ddcd8b1ea65e70"
-  integrity sha512-11IPy8QonPwGRi0CNCMvpzuEJLRpoXsQQT2vFBrBPYIxveLaRXED5ENw8MgTL5nL7TqJaYrLM/nnvT7uOIit+w==
+sequelize-auto@0.7.8:
+  version "0.7.8"
+  resolved "https://registry.yarnpkg.com/sequelize-auto/-/sequelize-auto-0.7.8.tgz#42826865c4223ade7b118342e2ad102c772d17a0"
+  integrity sha512-QYS9BpBq2oXT2HqvtnytiPFjucS5QLEERRGWoxKE8idclVquqCfnUk0gu1hO8ly9jrcKuDXHOyvLbxkfVauvmA==
   dependencies:
     lodash "^4.17.20"
     mkdirp "^1.0.4"
