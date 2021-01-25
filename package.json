@@ -67,7 +67,7 @@
     "sequelize-auto": "0.7.10",
     "start-server-and-test": "1.12.0",
     "superagent": "6.1.0",
-    "supertest": "4.0.2",
+    "supertest": "6.1.3",
     "swagger-ui-express": "3.0.10"
   },
   "engines": {
