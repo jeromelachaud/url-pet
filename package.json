@@ -72,7 +72,7 @@
   },
   "engines": {
     "node": "12.20.1",
-    "npm": "7.5.3"
+    "npm": "7.5.4"
   },
   "browserslist": {
     "production": [
