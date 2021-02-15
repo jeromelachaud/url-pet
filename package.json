@@ -37,7 +37,7 @@
     "react-scripts": "3.4.4",
     "sequelize": "5.22.3",
     "sequelize-cli": "6.2.0",
-    "sqlite3": "5.0.1",
+    "sqlite3": "5.0.2",
     "use-sound": "2.0.1",
     "wait-on": "5.2.1"
   },
