@@ -35,7 +35,7 @@
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-scripts": "3.4.4",
-    "sequelize": "6.5.1",
+    "sequelize": "6.6.0",
     "sequelize-cli": "6.2.0",
     "sqlite3": "5.0.2",
     "use-sound": "2.0.1",
