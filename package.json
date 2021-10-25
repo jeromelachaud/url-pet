@@ -20,7 +20,7 @@
     "test:e2e": "yarn build:client && start-server-and-test start:server:test http://localhost:8081 cy:run && git checkout -- api/url-minifier.sqlite3"
   },
   "dependencies": {
-    "axios": "0.23.0",
+    "axios": "0.24.0",
     "basic-auth": "2.0.1",
     "better-sqlite3": "7.4.4",
     "body-parser": "1.19.0",
