@@ -5483,7 +5483,7 @@ es6-iterator@2.0.3, es6-iterator@^2.0.3, es6-iterator@~2.0.3:
     es5-ext "^0.10.35"
     es6-symbol "^3.1.1"
 
-es6-symbol@^3.1.1, es6-symbol@~3.1.3:
+es6-symbol@^3.1.1, es6-symbol@^3.1.3, es6-symbol@~3.1.3:
   version "3.1.3"
   resolved "https://registry.yarnpkg.com/es6-symbol/-/es6-symbol-3.1.3.tgz#bad5d3c1bcdac28269f4cb331e431c78ac705d18"
   integrity sha512-NJ6Yn3FuDinBaBRWl/q5X/s4koRHBrgKAu+yGI6JCBeiu3qrcbJhwT2GeR/EXVfylRk8dpQVJoLEFhK+Mu31NA==
@@ -9798,11 +9798,12 @@ moo@^0.5.0:
   resolved "https://registry.yarnpkg.com/moo/-/moo-0.5.1.tgz#7aae7f384b9b09f620b6abf6f74ebbcd1b65dbc4"
   integrity sha512-I1mnb5xn4fO80BH9BLcF0yLypy2UKl+Cb01Fu0hJRkJjlCRtxZMWkTdAtDd5ZqCOxtCkhmRwyI57vWT+1iZ67w==
 
-morgan-body@2.6.6:
-  version "2.6.6"
-  resolved "https://registry.yarnpkg.com/morgan-body/-/morgan-body-2.6.6.tgz#1fe15e79bc35175339b377cbdfa1220a26988342"
-  integrity sha512-a4pWVvpqXjYyVoUnVCIosQCXJ345Ye5laVZhxA6vgs5liArn5S+DvcsDEIVdXxPCEUN2BTJZrWS9T4YQGMwnPA==
+morgan-body@2.6.8:
+  version "2.6.8"
+  resolved "https://registry.yarnpkg.com/morgan-body/-/morgan-body-2.6.8.tgz#3ba02b8b3a78461b18161fd02a16ff7bfd6e3d0d"
+  integrity sha512-m8wn411dwjPoz4UnG6yNAxHVSdbAwCoCPb1eL1twPXKyPici5WJSmRMQLqsGT/n2u81ycvOwIbFt3GevjpG6lQ==
   dependencies:
+    es6-symbol "^3.1.3"
     moment-timezone "^0.5.13"
     on-finished "^2.3.0"
     on-headers "^1.0.1"
