@@ -29,7 +29,7 @@
     "express": "4.17.3",
     "jsonwebtoken": "9.0.0",
     "morgan": "1.10.0",
-    "morgan-body": "2.6.6",
+    "morgan-body": "2.6.8",
     "nodemon": "2.0.15",
     "pg": "7.18.2",
     "react": "17.0.2",
