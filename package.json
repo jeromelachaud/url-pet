@@ -66,7 +66,7 @@
     "react-test-renderer": "17.0.2",
     "sequelize-auto": "0.8.7",
     "start-server-and-test": "1.14.0",
-    "superagent": "6.1.0",
+    "superagent": "8.0.8",
     "supertest": "6.3.3",
     "swagger-ui-express": "3.0.10"
   },
