@@ -65,7 +65,7 @@
     "react-router-dom": "6.10.0",
     "react-test-renderer": "17.0.2",
     "sequelize-auto": "0.8.8",
-    "start-server-and-test": "1.14.0",
+    "start-server-and-test": "1.15.4",
     "superagent": "6.1.0",
     "supertest": "6.3.3",
     "swagger-ui-express": "4.6.2"
