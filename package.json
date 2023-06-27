@@ -6,6 +6,8 @@
   "author": "jerome.lachaud@gmail.com",
   "license": "MIT",
   "scripts": {
+    "db:create": "sequelize db:create",
+    "db:migrate": "sequelize db:migrate",
     "start:server": "NODE_ENV=production node start",
     "start:server:dev": "NODE_ENV=development DEBUG=express:* nodemon start",
     "start:server:test": "NODE_ENV=test node start",
