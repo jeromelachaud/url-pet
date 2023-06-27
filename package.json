@@ -71,8 +71,7 @@
     "swagger-ui-express": "4.6.2"
   },
   "engines": {
-    "node": "14.16.1",
-    "npm": "7.24.2"
+    "node": "^18"
   },
   "browserslist": {
     "production": [
