@@ -28,10 +28,11 @@ export const LoginForm = () => {
       name,
       pass,
     }).then(res => {
+      setIsLoading(true)
       const token = res.data
       localStorage.setItem('token', token)
-      setIsLoading(true)
       setIsAuth(res.status === 200)
+      setIsLoading(false)
       setMessage(res.message)
     })
   }
