@@ -4,3 +4,7 @@
   font-size: 1rem;
   color: var(--primary-color);
 }
+
+input {
+  margin-bottom: 2.5rem;
+}
