@@ -11,16 +11,14 @@ context('Admin page', () => {
     beforeEach(() => {
       cy.visit('/admin', {
         onBeforeLoad(win) {
-          win.localStorage.setItem('token', `${Cypress.config('token')}`)
+          win.localStorage.setItem('token', `${Cypress.env('token')}`)
         },
       })
         .url()
         .should('eq', `${Cypress.config('baseUrl')}/admin`)
     })
     it('should have a header', () => {
-      cy.get('.Header')
-        .find('h1')
-        .should('have.text', 'url.pet')
+      cy.get('.Header').find('h1').should('have.text', 'url.pet')
     })
     it('should have a table with a header', () => {
       cy.get('.List')

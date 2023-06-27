@@ -5,16 +5,9 @@ context('Home Page', () => {
 
   describe('Check page elements', () => {
     it('should have a theme switcher', () => {
-      cy.get('#theme-switcher').find('span').should('have.text', '🌚')
-
       cy.get('#theme-switcher')
         .find('span')
-        .click()
-        .should(() => {
-          expect(localStorage.getItem('theme')).to.eq('light')
-        })
-        .should('have.text', '🌞')
-      cy.get('html').should('have.attr', 'data-theme', 'light')
+        .should('have.attr', 'aria-label', 'theme-switcher')
 
       cy.get('#theme-switcher')
         .find('span')
@@ -22,8 +15,17 @@ context('Home Page', () => {
         .should(() => {
           expect(localStorage.getItem('theme')).to.eq('dark')
         })
-        .should('have.text', '🌚')
+      // .should('have.text', '🌞') Currently not suported by cypress runners on CircleCI
       cy.get('html').should('have.attr', 'data-theme', 'dark')
+
+      cy.get('#theme-switcher')
+        .find('span')
+        .click()
+        .should(() => {
+          expect(localStorage.getItem('theme')).to.eq('light')
+        })
+      // .should('have.text', '🌚')
+      cy.get('html').should('have.attr', 'data-theme', 'light')
     })
 
     it('should have a header', () => {

@@ -5,9 +5,7 @@ context('Login Page', () => {
 
   describe('Check page elements', () => {
     it('should have a header', () => {
-      cy.get('.Header')
-        .find('h1')
-        .should('have.text', 'url.pet')
+      cy.get('.Header').find('h1').should('have.text', 'url.pet')
     })
 
     it('should have a form', () => {
@@ -26,11 +24,11 @@ context('Login Page', () => {
     it('should allow the admin to log in', () => {
       cy.get('#login-form').within(() => {
         cy.get('input#username')
-          .type('jerome')
-          .should('have.value', 'jerome')
+          .type(`${Cypress.env('adminUsername')}`)
+          .should('have.value', `${Cypress.env('adminUsername')}`)
         cy.get('input#password')
-          .type('admin')
-          .should('have.value', 'admin')
+          .type(`${Cypress.env('adminPassword')}`)
+          .should('have.value', `${Cypress.env('adminPassword')}`)
       })
       cy.get('#login-form')
         .submit()

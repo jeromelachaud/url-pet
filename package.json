@@ -14,12 +14,11 @@
     "test:server": "jest  --runInBand ./api && git checkout -- api/url-minifier.sqlite3",
     "start:client": "react-scripts start",
     "build:client": "react-scripts build",
-    "test:client:snapshot": "react-scripts test --env=jsdom",
-    "test:client:functional": "NODE_ENV=development sequelize db:drop && sequelize db:create && sequelize db:migrate && sequelize db:seed:all && cypress run",
+    "test:client:local": "yarn build:client && start-server-and-test start:server:test http://localhost:8081 cy:run && git checkout -- api/url-minifier.sqlite3",
+    "test:client:ci": "yarn build:client && start-server-and-test start:server:test http://localhost:8081 cy:run",
     "heroku-postbuild": "yarn build:client",
     "cy:open": "cypress open",
-    "cy:run": "cypress run",
-    "test:e2e": "yarn build:client && start-server-and-test start:server:test http://localhost:8081 cy:run && git checkout -- api/url-minifier.sqlite3"
+    "cy:run": "cypress run"
   },
   "dependencies": {
     "axios": "0.27.2",
@@ -46,7 +45,7 @@
   "devDependencies": {
     "babel-cli": "6.26.0",
     "babel-preset-env": "1.7.0",
-    "cypress": "6.9.1",
+    "cypress": "12.16.0",
     "enzyme": "3.11.0",
     "enzyme-adapter-react-16": "1.15.7",
     "eslint": "6.8.0",
