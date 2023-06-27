@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Redirect } from 'react-router'
+import { Navigate } from 'react-router'
 import { Button } from '../Components/Button'
 import { InputField } from '../Components/InputField'
 import { Loader } from '../Components/Loader'
@@ -70,7 +70,7 @@ export const LoginForm = () => {
         {messageElement}
       </form>
       {isAuth && (
-        <Redirect
+        <Navigate
           to={{
             pathname: '/admin',
             state: isAuth,
