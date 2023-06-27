@@ -73,7 +73,7 @@
     "swagger-ui-express": "4.6.2"
   },
   "engines": {
-    "node": "^18"
+    "node": "^16"
   },
   "browserslist": {
     "production": [
