@@ -2,13 +2,13 @@ version: '3.7'
 services:
   postgres:
     ports:
-      - '5432:5432'
+      - '5433:5432'
     environment:
       - POSTGRES_USER=admin
       - POSTGRES_PASSWORD=password
     image: postgres:13.10
     volumes:
-      - data_db:/var/lib/postgresql/data
+      - url_pet_data_db:/var/lib/postgresql/data
 volumes:
-  data_db:
+  url_pet_data_db:
     driver: 'local'

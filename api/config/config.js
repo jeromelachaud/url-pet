@@ -9,6 +9,8 @@ const SERVER_PROTOCOL = 'http' // Note: I did not test https yet, so you might n
 const ROOT_URL = `${SERVER_PROTOCOL}://${SERVER_HOST}:${SERVER_PORT}`
 const DB_USERNAME = 'admin'
 const DB_PASSWORD = 'password'
+const DB_PORT = '5433'
+const DB_HOST = 'localhost'
 
 module.exports = {
   development: {
@@ -16,9 +18,12 @@ module.exports = {
     database: 'url.pet.local',
     username: DB_USERNAME,
     password: DB_PASSWORD,
+    port: DB_PORT,
     dialect: 'postgres',
     operatorsAliases: '0',
     options: {
+      host: DB_HOST,
+      port: DB_PORT,
       protocol: 'postgres',
       dialect: 'postgres',
       operatorsAliases: '0',
