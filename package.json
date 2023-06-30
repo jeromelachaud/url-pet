@@ -69,7 +69,7 @@
     "start-server-and-test": "1.15.4",
     "superagent": "8.0.9",
     "supertest": "6.3.3",
-    "swagger-ui-express": "4.6.2"
+    "swagger-ui-express": "4.6.3"
   },
   "engines": {
     "node": "^16"
