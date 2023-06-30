@@ -63,7 +63,7 @@
     "eslint-plugin-standard": "4.1.0",
     "jest-enzyme": "7.1.2",
     "prettier": "2.8.8",
-    "react-router-dom": "6.10.0",
+    "react-router-dom": "6.14.0",
     "react-test-renderer": "17.0.2",
     "sequelize-auto": "0.8.8",
     "start-server-and-test": "1.15.4",
