@@ -11,11 +11,11 @@
     "start:server": "NODE_ENV=production node start",
     "start:server:dev": "NODE_ENV=development DEBUG=express:* nodemon start",
     "start:server:test": "NODE_ENV=test node start",
-    "test:server": "jest  --runInBand ./api && git checkout -- api/url-minifier.sqlite3",
+    "test:server:local": "jest --runInBand ./api && git checkout -- api/url-minifier.sqlite3",
+    "test:server:ci": "jest --forceExit --detectOpenHandles ./api",
     "start:client": "react-scripts start",
     "build:client": "react-scripts build",
     "test:client:local": "yarn build:client && start-server-and-test start:server:test http://localhost:8081 cy:run && git checkout -- api/url-minifier.sqlite3",
-    "test:client:ci": "yarn build:client && start-server-and-test start:server:test http://localhost:8081 cy:run",
     "heroku-postbuild": "yarn build:client",
     "cy:open": "cypress open",
     "cy:run": "cypress run"

@@ -1,18 +1,41 @@
-version: 2
+version: 2.1
+
+orbs:
+  node: circleci/node@5.1.0
+  cypress: cypress-io/cypress@3.1.2
+
 jobs:
   build:
-    docker:
-      - image: cimg/node:14.16.1
-
-    working_directory: ~/repo
-
+    executor:
+      name: node/default
+      tag: '16.14'
     steps:
       - checkout
-
+      - node/install-packages:
+          pkg-manager: yarn
       - run:
-          name: build
-          command: yarn
+          command: npm run build:client
+          name: Build client
 
+  unit-tests:
+    executor:
+      name: node/default
+      tag: '16.14'
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: yarn
       - run:
-          name: unit tests
-          command: yarn test:server
+          command: npm run test:server:ci
+          name: Unit tests
+
+workflows:
+  build_and_test:
+    jobs:
+      - build
+      - unit-tests
+      - cypress/run:
+          name: e2e-tests
+          package-manager: yarn
+          cypress-command: npx wait-on@latest http://localhost:8081 && npx cypress run --record
+          start-command: npm run build:client && npm run start:server:test
