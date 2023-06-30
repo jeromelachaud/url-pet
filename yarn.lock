@@ -9887,10 +9887,10 @@ moo@^0.5.0:
   resolved "https://registry.yarnpkg.com/moo/-/moo-0.5.1.tgz#7aae7f384b9b09f620b6abf6f74ebbcd1b65dbc4"
   integrity sha512-I1mnb5xn4fO80BH9BLcF0yLypy2UKl+Cb01Fu0hJRkJjlCRtxZMWkTdAtDd5ZqCOxtCkhmRwyI57vWT+1iZ67w==
 
-morgan-body@2.6.8:
-  version "2.6.8"
-  resolved "https://registry.yarnpkg.com/morgan-body/-/morgan-body-2.6.8.tgz#3ba02b8b3a78461b18161fd02a16ff7bfd6e3d0d"
-  integrity sha512-m8wn411dwjPoz4UnG6yNAxHVSdbAwCoCPb1eL1twPXKyPici5WJSmRMQLqsGT/n2u81ycvOwIbFt3GevjpG6lQ==
+morgan-body@2.6.9:
+  version "2.6.9"
+  resolved "https://registry.yarnpkg.com/morgan-body/-/morgan-body-2.6.9.tgz#92a864c66bef644019572a6611ef702fa42f2bad"
+  integrity sha512-O0dlv/V67gSszFo4rraZ7nMhD+iuWOg2w7hOLcAC6S+nF26Q8XvikGFjoJ7+dVuh49BBsIvQqRUGbs9e8keFKw==
   dependencies:
     es6-symbol "^3.1.3"
     moment-timezone "^0.5.13"
