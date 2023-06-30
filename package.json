@@ -23,7 +23,7 @@
   "dependencies": {
     "axios": "0.27.2",
     "basic-auth": "2.0.1",
-    "better-sqlite3": "7.6.2",
+    "better-sqlite3": "8.4.0",
     "body-parser": "1.20.2",
     "cors": "2.8.5",
     "dotenv": "9.0.2",
