@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Navigate } from 'react-router'
-import { Button } from '../Components/Button'
-import { InputField } from '../Components/InputField'
-import { Loader } from '../Components/Loader'
+import { Button } from './Button'
+import { InputField } from './InputField'
+import { Loader } from './Loader'
 import { Service } from '../Service'
 import './LoginForm.css'
 

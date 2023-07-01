@@ -2,7 +2,7 @@
 import axios from 'axios'
 
 const instance = axios.create({
-  baseURL: `${process.env.REACT_APP_HOST}`,
+  baseURL: `${import.meta.env.VITE_REACT_APP_HOST}`,
 })
 
 export const Service = {

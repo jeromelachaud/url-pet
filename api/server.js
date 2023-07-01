@@ -18,11 +18,16 @@ server.use(bodyParser.urlencoded({ extended: false }))
 
 // Declare file to serve static file
 const path = require('path')
-server.use(express.static(path.join(__dirname, '../build')))
+server.use(express.static(path.join(__dirname, '../dist')))
 
 // Routes
+
+server.get('/ping', (req, res) => {
+  res.sendStatus(200)
+})
+
 server.get(['/login', '/admin'], (req, res) => {
-  res.sendFile(path.join(__dirname, '../build', 'index.html'))
+  res.sendFile(path.join(__dirname, '../dist', 'index.html'))
 })
 
 const userRoutes = require('./routes/user')

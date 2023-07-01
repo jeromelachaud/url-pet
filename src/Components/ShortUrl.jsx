@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types'
-import React from 'react'
 import './ShortUrl.css'
 
 export const ShortUrl = ({ link, message }) => {

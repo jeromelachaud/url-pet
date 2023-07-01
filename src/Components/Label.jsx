@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types'
-import React from 'react'
 import './Label.css'
 
 export const Label = ({ htmlFor, text, id }) => {
