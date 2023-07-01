@@ -5,7 +5,6 @@ import {
   RouterProvider,
 } from 'react-router-dom'
 
-import React from 'react'
 import './App.css'
 import { Main } from './Layout/Main'
 import { Home } from './Pages/Home'

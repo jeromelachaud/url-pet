@@ -1,42 +1,22 @@
 module.exports = {
-  root: true,
-  plugins: ['json'],
-
-  env: {
-    es6: true,
-    jasmine: true,
-    browser: true,
-  },
-  // https://github.com/feross/standard/blob/master/RULES.md#javascript-standard-style
+  env: { browser: true, es2020: true },
   extends: [
-    'standard',
-    'prettier',
+    'eslint:recommended',
     'plugin:react/recommended',
-    'plugin:cypress/recommended',
+    'plugin:react/jsx-runtime',
+    'plugin:react-hooks/recommended',
   ],
+  parser: '@typescript-eslint/parser',
+  parserOptions: { ecmaVersion: { jsx: true }, sourceType: 'module' },
   parserOptions: {
-    sourceType: 'module',
     ecmaFeatures: {
       jsx: true,
     },
   },
-  // custom rules
+
+  settings: { react: { version: '18.2' } },
+  plugins: ['react-refresh'],
   rules: {
-    // allow async-await
-    'generator-star-spacing': 'off',
-    // allow debugger during development
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'comma-dangle': ['error', 'only-multiline'],
-    'space-before-function-paren': [
-      'warn',
-      {
-        anonymous: 'always',
-        named: 'never',
-        asyncArrow: 'ignore',
-      },
-    ],
-    'no-unused-vars': 'warn',
-    // Disable 'indent' rule so it doesn"t confkit with Prettier
-    indent: 'off',
+    'react-refresh/only-export-components': 'warn',
   },
 }

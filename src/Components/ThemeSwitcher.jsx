@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import useSound from 'use-sound'
 import switchOffSound from './sounds/switch-off.mp3'
 import switchOnSound from './sounds/switch-on.mp3'

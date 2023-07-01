@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Service } from '../Service'
 import { DeleteLink } from './DeleteLink'
 import './LinkItem.css'
@@ -30,7 +30,7 @@ export const LinkItem = ({ link }) => {
       ))
 
   let LinkItemElement
-  const minifiedUrl = `${process.env.REACT_APP_HOST}/${hash}`
+  const minifiedUrl = `${import.meta.env.VITE_REACT_APP_HOST}/${hash}`
   !isDeleted
     ? (LinkItemElement = (
         <tr className="LinkItem">

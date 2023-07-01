@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Service } from '../Service'
 import { Button } from './Button'
 import { InputField } from './InputField'

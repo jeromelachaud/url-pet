@@ -7,7 +7,6 @@
 .short-url__message {
   font-size: 1rem;
   color: var(--secondary-color);
-
 }
 .short-url__link {
   font-size: 1.5rem;
@@ -21,7 +20,7 @@
 }
 
 .short-url__link::after {
-  display:inline-block;
+  display: inline-block;
   margin-left: 5px;
   content: '🔗';
 }

@@ -9,7 +9,7 @@
   --transition_effect: linear;
 }
 
-html[data-theme='light'] {
+html[data-theme="light"] {
   box-sizing: border-box;
   --background-body: #fefcfb;
   --primary-color: #001f54;
@@ -17,7 +17,7 @@ html[data-theme='light'] {
   --third-color: #001f54;
 }
 html,
-html[data-theme='dark'] {
+html[data-theme="dark"] {
   --background-body: #001f54;
   --primary-color: #4a6fa5;
   --secondary-color: #859ab9;
