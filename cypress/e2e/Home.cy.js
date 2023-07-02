@@ -1,6 +1,10 @@
 context('Home Page', () => {
   beforeEach(() => {
-    cy.visit('/')
+    cy.visit('/', {
+      onBeforeLoad(win) {
+        win.localStorage.setItem('theme', 'light')
+      },
+    })
   })
 
   describe('Check page elements', () => {
@@ -40,6 +44,7 @@ context('Home Page', () => {
       })
     })
   })
+
   describe('Check form functionalities', () => {
     it('should post the URL to minify', () => {
       cy.get('#minifier-form').within(() => {
