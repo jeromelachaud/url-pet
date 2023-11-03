@@ -36,7 +36,7 @@
     "react-dom": "18.2.0",
     "react-router-dom": "6.18.0",
     "sequelize": "6.33.0",
-    "sequelize-cli": "6.6.1",
+    "sequelize-cli": "6.6.2",
     "use-sound": "4.0.1",
     "wait-on": "^7.0.1",
     "yarn": "1.22.19"
