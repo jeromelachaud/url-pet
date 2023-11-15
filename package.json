@@ -39,7 +39,7 @@
     "sequelize-cli": "6.6.2",
     "use-sound": "4.0.1",
     "wait-on": "^7.0.1",
-    "yarn": "1.22.20"
+    "yarn": "1.22.21"
   },
   "devDependencies": {
     "@types/react": "18.2.37",
