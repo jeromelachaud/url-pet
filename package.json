@@ -42,7 +42,7 @@
     "yarn": "1.22.21"
   },
   "devDependencies": {
-    "@types/react": "18.2.40",
+    "@types/react": "18.2.41",
     "@types/react-dom": "18.2.17",
     "@vitejs/plugin-react": "4.2.0",
     "cypress": "13.6.0",
