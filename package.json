@@ -38,7 +38,7 @@
     "sequelize": "6.37.7",
     "sequelize-cli": "6.6.3",
     "use-sound": "4.0.4",
-    "wait-on": "^7.0.1",
+    "wait-on": "^8.0.4",
     "yarn": "1.22.22"
   },
   "devDependencies": {
