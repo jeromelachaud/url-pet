@@ -2,7 +2,6 @@ version: 2.1
 
 orbs:
   node: circleci/node@7.2.1
-  cypress: cypress-io/cypress@5.0.1
 
 jobs:
   build:
@@ -30,22 +29,26 @@ jobs:
           command: npm run test:server:ci
 
   e2e-tests:
-    docker:
-      # Pick a Cypress image that uses Node 20.x (important!)
-      - image: cypress/included:13.13.2-node20.10.0-chrome118-1.3
+    executor:
+      name: node/default
+      tag: "20.19.5"
     steps:
       - checkout
-      # install deps with yarn (same as other jobs)
+      - node/install-packages:
+          pkg-manager: yarn
       - run:
-          name: Install packages
-          command: yarn install
-      # build + start server + run Cypress
-      - run:
-          name: Run Cypress E2E
+          name: Start app and run Cypress
           command: |
+            # Build the client
             npm run build:client &
+
+            # Start API / test server in background
             npm run start:server:test &
+
+            # Wait until the server is actually listening
             npx wait-on@latest http://localhost:8081
+
+            # Run Cypress (headless, default Electron browser)
             npx cypress run --record
 
 workflows:
