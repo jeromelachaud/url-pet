@@ -25,10 +25,10 @@
   "dependencies": {
     "add": "2.0.6",
     "and": "0.0.3",
-    "axios": "1.11.0",
+    "axios": "1.12.2",
     "basic-auth": "2.0.1",
     "cors": "2.8.5",
-    "dotenv": "16.5.0",
+    "dotenv": "16.6.1",
     "express": "4.21.2",
     "jsonwebtoken": "9.0.2",
     "pg": "8.16.3",
@@ -42,18 +42,18 @@
     "yarn": "1.22.22"
   },
   "devDependencies": {
-    "@types/react": "18.3.23",
+    "@types/react": "18.3.24",
     "@types/react-dom": "18.3.7",
-    "@vitejs/plugin-react": "4.5.2",
+    "@vitejs/plugin-react": "4.7.0",
     "cypress": "13.17.0",
     "eslint": "8.57.1",
     "eslint-plugin-react": "7.37.5",
     "eslint-plugin-react-hooks": "4.6.2",
-    "eslint-plugin-react-refresh": "0.4.20",
+    "eslint-plugin-react-refresh": "0.4.22",
     "nodemon": "3.1.10",
     "sqlite3": "5.1.7",
     "supertest": "7.1.4",
-    "vite": "6.3.5",
+    "vite": "6.4.1",
     "vitest": "^2.0.5"
   }
 }
