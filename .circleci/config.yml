@@ -8,7 +8,7 @@ jobs:
   build:
     executor:
       name: node/default
-      tag: '20.1.0'
+      tag: '20.19.0'
     steps:
       - checkout
       - node/install-packages:
@@ -20,7 +20,7 @@ jobs:
   unit-tests:
     executor:
       name: node/default
-      tag: '20.1.0'
+      tag: '20.19.0'
     steps:
       - checkout
       - node/install-packages:
