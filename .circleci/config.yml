@@ -2,40 +2,80 @@ version: 2.1
 
 orbs:
   node: circleci/node@7.2.1
-  cypress: cypress-io/cypress@3.4.3
 
 jobs:
   build:
     executor:
       name: node/default
-      tag: '20.19.0'
+      tag: "20.19.5"
     steps:
       - checkout
       - node/install-packages:
           pkg-manager: yarn
       - run:
-          command: npm run build:client
           name: Build client
+          command: npm run build:client
 
   unit-tests:
     executor:
       name: node/default
-      tag: '20.19.0'
+      tag: "20.19.5"
     steps:
       - checkout
       - node/install-packages:
           pkg-manager: yarn
       - run:
-          command: npm run test:server:ci
           name: Unit tests
+          command: npm run test:server:ci
+
+  e2e-tests:
+    executor:
+      name: node/default
+      tag: "20.19.5"
+    steps:
+      - checkout
+
+      - node/install-packages:
+          pkg-manager: yarn
+
+      - run:
+          name: Install Cypress OS deps
+          command: |
+            sudo apt-get update
+            sudo apt-get install -y \
+              xvfb \
+              libgtk2.0-0t64 \
+              libgtk-3-0t64 \
+              libgbm-dev \
+              libnotify-dev \
+              libnss3 \
+              libx11-xcb1 \
+              libxss1 \
+              libdrm2 \
+              libxshmfence1 \
+              libatk-bridge2.0-0t64 \
+              libatk1.0-0t64 \
+              libasound2t64
+
+      - run:
+          name: Download Cypress binary
+          command: |
+            npx cypress install
+
+      - run:
+          name: Start app and run Cypress
+          command: |
+            npm run build:client &
+
+            npm run start:server:test &
+
+            npx wait-on http://localhost:8081
+
+            npx cypress run --record
 
 workflows:
   build_and_test:
     jobs:
       - build
       - unit-tests
-      - cypress/run:
-          name: e2e-tests
-          package-manager: yarn
-          cypress-command: npx wait-on@latest http://localhost:8081 && npx cypress run --record
-          start-command: npm run build:client && npm run start:server:test
+      - e2e-tests
