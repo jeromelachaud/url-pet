@@ -6374,7 +6374,7 @@ vitest@^2.0.5:
     vite-node "2.1.9"
     why-is-node-running "^2.3.0"
 
-wait-on@^9.0.1:
+wait-on@9.0.1:
   version "9.0.1"
   resolved "https://registry.yarnpkg.com/wait-on/-/wait-on-9.0.1.tgz#c5f2c3094b8e808a241cf41d2aaecd4f762907ec"
   integrity sha512-noeCAI+XbqWMXY23sKril0BSURhuLYarkVXwJv1uUWwoojZJE7pmX3vJ7kh7SZaNgPGzfsCSQIZM/AGvu0Q9pA==
