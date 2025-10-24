@@ -34,21 +34,42 @@ jobs:
       tag: "20.19.5"
     steps:
       - checkout
+
       - node/install-packages:
           pkg-manager: yarn
+
+      - run:
+          name: Install Cypress OS deps
+          command: |
+            sudo apt-get update
+            sudo apt-get install -y \
+              xvfb \
+              libgtk2.0-0 \
+              libgtk-3-0 \
+              libgbm-dev \
+              libnotify-dev \
+              libnss3 \
+              libx11-xcb1 \
+              libxss1 \
+              libdrm2 \
+              libxshmfence1 \
+              libatk-bridge2.0-0 \
+              libatk1.0-0 \
+              libasound2
+
       - run:
           name: Start app and run Cypress
           command: |
-            # Build the client
+            # build client
             npm run build:client &
 
-            # Start API / test server in background
+            # start API/server in background
             npm run start:server:test &
 
-            # Wait until the server is actually listening
+            # wait until it's reachable
             npx wait-on@latest http://localhost:8081
 
-            # Run Cypress (headless, default Electron browser)
+            # run Cypress headless (Electron or Chrome, doesn't matter now that deps are installed)
             npx cypress run --record
 
 workflows:
