@@ -58,18 +58,19 @@ jobs:
               libasound2t64
 
       - run:
+          name: Download Cypress binary
+          command: |
+            npx cypress install
+
+      - run:
           name: Start app and run Cypress
           command: |
-            # build client
             npm run build:client &
 
-            # start API/server in background
             npm run start:server:test &
 
-            # wait until it's reachable
-            npx wait-on@latest http://localhost:8081
+            npx wait-on http://localhost:8081
 
-            # run Cypress headless (Electron or Chrome, doesn't matter now that deps are installed)
             npx cypress run --record
 
 workflows:
