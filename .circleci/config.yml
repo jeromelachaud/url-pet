@@ -8,34 +8,49 @@ jobs:
   build:
     executor:
       name: node/default
-      tag: '20.19.0'
+      tag: "20.19.5"
     steps:
       - checkout
       - node/install-packages:
           pkg-manager: yarn
       - run:
-          command: npm run build:client
           name: Build client
+          command: npm run build:client
 
   unit-tests:
     executor:
       name: node/default
-      tag: '20.19.0'
+      tag: "20.19.5"
     steps:
       - checkout
       - node/install-packages:
           pkg-manager: yarn
       - run:
-          command: npm run test:server:ci
           name: Unit tests
+          command: npm run test:server:ci
+
+  e2e-tests:
+    docker:
+      # Pick a Cypress image that uses Node 20.x (important!)
+      - image: cypress/included:13.13.2-node20.10.0-chrome118-1.3
+    steps:
+      - checkout
+      # install deps with yarn (same as other jobs)
+      - run:
+          name: Install packages
+          command: yarn install
+      # build + start server + run Cypress
+      - run:
+          name: Run Cypress E2E
+          command: |
+            npm run build:client &
+            npm run start:server:test &
+            npx wait-on@latest http://localhost:8081
+            npx cypress run --record
 
 workflows:
   build_and_test:
     jobs:
       - build
       - unit-tests
-      - cypress/run:
-          name: e2e-tests
-          package-manager: yarn
-          cypress-command: npx wait-on@latest http://localhost:8081 && npx cypress run --record
-          start-command: npm run build:client && npm run start:server:test
+      - e2e-tests
