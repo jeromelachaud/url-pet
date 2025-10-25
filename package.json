@@ -19,7 +19,7 @@
     "start:server:test": "NODE_ENV=test node start",
     "start:server": "NODE_ENV=production node start",
     "test:client:local": "wait-on http://localhost:8081/ping && yarn build:client && npm run cy:run --record && git checkout -- api/url-minifier.sqlite3",
-    "test:server:ci": "vitest --watch=false ./api",
+    "test:server:ci": "NODE_ENV=test vitest --watch=false ./api",
     "test:server:local": "vitest --watch=false ./api && git checkout -- api/url-minifier.sqlite3"
   },
   "dependencies": {
@@ -29,7 +29,7 @@
     "basic-auth": "2.0.1",
     "cors": "2.8.5",
     "dotenv": "17.2.3",
-    "express": "4.21.2",
+    "express": "5.1.0",
     "jsonwebtoken": "9.0.2",
     "pg": "8.16.3",
     "react": "19.2.0",
