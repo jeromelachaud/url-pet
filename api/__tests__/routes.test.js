@@ -2,6 +2,35 @@ require('dotenv').config()
 const request = require('supertest')
 const app = require('../server')
 const { generateHash } = require('../helpers/generateHash')
+const models = require('../models')
+
+// Ensure test DB contains expected seeded rows so CI doesn't rely on a committed sqlite file.
+beforeAll(async () => {
+  // Recreate tables and insert the two rows used by tests
+  await models.sequelize.sync({ force: true })
+  await models.urls.bulkCreate([
+    {
+      id: '90b5c2d2-483f-4f9b-bad7-cd2f64bf4b04',
+      url: 'https://already_created.com',
+      hash: 'n44rk',
+      visit: 0,
+      createdAt: new Date('2020-01-01 10:00:00.45+00'),
+      updatedAt: new Date('2020-01-01 11:00:00.45+00'),
+    },
+    {
+      id: '64a30e50-4306-460d-8ae5-3b84273a4425',
+      url: 'https://to_be_deleted.com',
+      hash: 'p69Tn',
+      visit: 0,
+      createdAt: new Date('2020-02-01 10:00:00.45+00'),
+      updatedAt: new Date('2020-02-01 11:00:00.45+00'),
+    },
+  ])
+})
+
+afterAll(async () => {
+  await models.sequelize.close()
+})
 
 describe('Test the root path', () => {
   it('should response to a POST request with a 404', () => {
