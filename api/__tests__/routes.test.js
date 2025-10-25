@@ -1,8 +1,10 @@
 require('dotenv').config()
+// Ensure tests use the "test" environment so models/config pick the sqlite test DB
+process.env.NODE_ENV = 'test'
 const request = require('supertest')
+const models = require('../models')
 const app = require('../server')
 const { generateHash } = require('../helpers/generateHash')
-const models = require('../models')
 
 // Ensure test DB contains expected seeded rows so CI doesn't rely on a committed sqlite file.
 beforeAll(async () => {
