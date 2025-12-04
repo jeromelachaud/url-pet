@@ -34,7 +34,7 @@
     "pg": "8.16.3",
     "react": "19.2.1",
     "react-dom": "19.2.1",
-    "react-router-dom": "7.10.0",
+    "react-router-dom": "7.10.1",
     "sequelize": "6.37.7",
     "sequelize-cli": "6.6.3",
     "use-sound": "5.0.0",
