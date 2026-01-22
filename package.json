@@ -27,7 +27,7 @@
     "and": "0.0.3",
     "axios": "1.13.2",
     "basic-auth": "2.0.1",
-    "cors": "2.8.5",
+    "cors": "2.8.6",
     "dotenv": "17.2.3",
     "express": "4.22.1",
     "jsonwebtoken": "9.0.3",
