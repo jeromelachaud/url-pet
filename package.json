@@ -35,7 +35,7 @@
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "react-router-dom": "7.13.1",
-    "sequelize": "6.37.7",
+    "sequelize": "6.37.8",
     "sequelize-cli": "6.6.5",
     "use-sound": "5.0.0",
     "wait-on": "9.0.4",
