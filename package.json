@@ -29,7 +29,7 @@
     "basic-auth": "2.0.1",
     "cors": "2.8.6",
     "dotenv": "17.4.2",
-    "express": "4.22.1",
+    "express": "4.22.2",
     "jsonwebtoken": "9.0.3",
     "pg": "8.20.0",
     "react": "19.2.6",
