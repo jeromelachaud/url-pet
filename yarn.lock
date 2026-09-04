@@ -1082,12 +1082,10 @@ base64-js@^1.3.1:
   resolved "https://registry.yarnpkg.com/base64-js/-/base64-js-1.5.1.tgz#1b1b440160a5bf7ad40b650f095963481903930a"
   integrity sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==
 
-basic-auth@2.0.1:
-  version "2.0.1"
-  resolved "https://registry.npmjs.org/basic-auth/-/basic-auth-2.0.1.tgz"
-  integrity sha512-NF+epuEdnUYVlGuhaxbbq+dvJttwLnGY+YixlXlME5KpQ5W3CnXA5cVTneY3SPbPDRkcjMbifrwmFYcClgOZeg==
-  dependencies:
-    safe-buffer "5.1.2"
+basic-auth@3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/basic-auth/-/basic-auth-3.0.0.tgz#18665a504dc0cdf22e9f83d51b14dc1d226d4e21"
+  integrity sha512-B63UKsSJ2atgiSuCJvzAjpfAdFY6mYT3C0vZFlLV/81Rw2/VCs6Tp29UzkpKETB3qA2cHwuU1LjBnhUQ0WkPKw==
 
 bcrypt-pbkdf@^1.0.0:
   version "1.0.2"
@@ -4710,11 +4708,6 @@ safe-array-concat@^1.1.3:
     get-intrinsic "^1.2.6"
     has-symbols "^1.1.0"
     isarray "^2.0.5"
-
-safe-buffer@5.1.2:
-  version "5.1.2"
-  resolved "https://registry.npmjs.org/safe-buffer/-/safe-buffer-5.1.2.tgz"
-  integrity sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g==
 
 safe-buffer@5.2.1, safe-buffer@^5.0.1, safe-buffer@^5.1.2, safe-buffer@~5.2.0:
   version "5.2.1"
