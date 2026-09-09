@@ -32,8 +32,8 @@
     "express": "4.22.2",
     "jsonwebtoken": "9.0.3",
     "pg": "8.23.0",
-    "react": "19.2.8",
-    "react-dom": "19.2.8",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
     "react-router-dom": "7.18.3",
     "sequelize": "6.37.8",
     "sequelize-cli": "6.6.5",
@@ -42,8 +42,8 @@
     "yarn": "1.22.22"
   },
   "devDependencies": {
-    "@types/react": "19.2.18",
-    "@types/react-dom": "19.2.7",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
     "@vitejs/plugin-react": "6.1.1",
     "cypress": "15.21.1",
     "eslint": "10.10.0",
