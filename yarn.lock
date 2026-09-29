@@ -1055,23 +1055,13 @@ aws4@^1.8.0:
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.12.0.tgz#ce1c9d143389679e253b314241ea9aa5cec980d3"
   integrity sha512-NmWvPnx0F1SfrQbYwOi7OeaNGokp9XhzNioJ/CSBs8Qa4vxug81mhJEAVZwxXuBmYB5KDRfMq/F3RR0BIU7sWg==
 
-axios@1.20.0:
+axios@1.20.0, axios@^1.20.0:
   version "1.20.0"
   resolved "https://registry.yarnpkg.com/axios/-/axios-1.20.0.tgz#515513445aa60e71d04b6521ca6210829ccb4786"
   integrity sha512-r8aOh8j9cGKpgQAqpzrUHnSIc6a59Y3Xf/cv8sy1DrHCkZHzQGEuoq1tARk6qSyDdtQGSDgpb9kFlruzPvrgwg==
   dependencies:
     follow-redirects "^1.16.0"
     form-data "^4.0.6"
-    https-proxy-agent "^5.0.1"
-    proxy-from-env "^2.1.0"
-
-axios@^1.18.1:
-  version "1.18.1"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-1.18.1.tgz#d63f9863bcd8938815c86f9e2abd380189d96dfe"
-  integrity sha512-3nTvFlvpn9Zu/RkHUqtc7/+al4UpRW5az71ap5zccp6e8RAYEzhMTecX8Dz1wWDYrPpUoB1HAQEGEAEvUr7S9g==
-  dependencies:
-    follow-redirects "^1.16.0"
-    form-data "^4.0.5"
     https-proxy-agent "^5.0.1"
     proxy-from-env "^2.1.0"
 
@@ -3460,10 +3450,10 @@ jackspeak@^3.1.2:
   optionalDependencies:
     "@pkgjs/parseargs" "^0.11.0"
 
-joi@^18.2.3:
-  version "18.2.8"
-  resolved "https://registry.yarnpkg.com/joi/-/joi-18.2.8.tgz#855dae219ef3bb48bb26c35f02fdb521f88b9c03"
-  integrity sha512-G2TX62h58ZHuwqetJgP2F4ualakqAmZtBYe3jWen7gxQRw5xApX6crnFtuB91WC0c3ESBnva+kGSnb3+6pIQDQ==
+joi@^18.2.9:
+  version "18.2.9"
+  resolved "https://registry.yarnpkg.com/joi/-/joi-18.2.9.tgz#8f489aebefab85cfa9979ea4471e3eea022787b1"
+  integrity sha512-2mD929bUVKUhOLQQEVhlf6EZ0Mlo0DeRb5MO7cViR9AXLtBauuccEtB1py9Ocxpo/P7ucnh442iY/iOwrh3IQw==
   dependencies:
     "@hapi/address" "^5.1.1"
     "@hapi/formula" "^3.0.2"
@@ -5839,15 +5829,14 @@ vitest@4.1.11:
     vite "^6.0.0 || ^7.0.0 || ^8.0.0"
     why-is-node-running "^2.3.0"
 
-wait-on@9.1.0:
-  version "9.1.0"
-  resolved "https://registry.yarnpkg.com/wait-on/-/wait-on-9.1.0.tgz#3872a460589e33f2c7a1c53cbbb83c437477073e"
-  integrity sha512-PymrLXHLBM1Ju/Xspb2ADUhbPSMvbnuNvy/mN2hWtpbJ3da0h3Ky1LqwKPG5QSVR57liyO0iUpfipYl/s5qNvA==
+wait-on@9.4.0:
+  version "9.4.0"
+  resolved "https://registry.yarnpkg.com/wait-on/-/wait-on-9.4.0.tgz#83a7c470c63d0ae5d3304bc3ba00e0713a9caae3"
+  integrity sha512-70vjt46idCEqR3THCRFOVTcEeAhzHTMwDvhZyixUYAGmLbQ05acRTbs9E/Jk1hrL3oiAn09C+uNTopbzgMt3ng==
   dependencies:
-    axios "^1.18.1"
-    joi "^18.2.3"
+    axios "^1.20.0"
+    joi "^18.2.9"
     lodash "^4.18.1"
-    minimist "^1.2.8"
     rxjs "^7.8.2"
 
 which-boxed-primitive@^1.0.2:
