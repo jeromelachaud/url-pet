@@ -31,7 +31,7 @@
     "dotenv": "18.0.4",
     "express": "4.22.3",
     "jsonwebtoken": "9.0.3",
-    "pg": "8.23.0",
+    "pg": "8.23.1",
     "react": "19.3.0",
     "react-dom": "19.3.0",
     "react-router-dom": "7.18.4",
