@@ -19,7 +19,7 @@ jobs:
   unit-tests:
     executor:
       name: node/default
-      tag: "20.19.5"
+      tag: "22.16.0"
     steps:
       - checkout
       - node/install-packages:
@@ -31,7 +31,7 @@ jobs:
   e2e-tests:
     executor:
       name: node/default
-      tag: "20.19.5"
+      tag: "22.16.0"
     steps:
       - checkout
 
